@@ -1,0 +1,8 @@
+* {
+	/*display: none;*/
+	box-sizing: border-box;
+}
+ #logout-btn.nav-item {
+ 	margin-right: 50% !important;	
+}
+
