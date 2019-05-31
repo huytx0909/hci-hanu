@@ -1,0 +1,40 @@
+.my-nav-link{
+  color: grey !important;  
+}
+
+.my-nav-link:hover {
+  color:black !important;
+  text-transform: bold !important;
+}
+
+#magic-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-right:25px;
+  width: 100px;
+  height: 4px;
+  background: #fe4902;
+}
+
+.navbar-nav li a {
+  margin-left: 25px;
+  margin-right:25px;
+}
+
+.blog-item-container {
+  transition: background .3s ease-in;
+  cursor: pointer;
+}
+
+.blog-item-side-bar {
+  transition: background .3s ease-in;
+}
+
+.blog-item-container:hover{
+  background-color: #f2f2f2;
+}
+
+.blog-item-container:hover .blog-item-side-bar{
+  background-color: #fe4902;
+}
