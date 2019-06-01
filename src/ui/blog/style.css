@@ -1,3 +1,9 @@
+hr {
+  margin-left:6%;
+  margin-right:6%;
+  height:2px;
+}
+
 .my-nav-link{
   color: grey !important;  
 }
@@ -14,7 +20,7 @@
   margin-right:25px;
   width: 100px;
   height: 4px;
-  background: #fe4902;
+  background: #007bff;
 }
 
 .navbar-nav li a {
@@ -23,6 +29,7 @@
 }
 
 .blog-item-container {
+  margin-left:3%;
   transition: background .3s ease-in;
   cursor: pointer;
 }
@@ -31,10 +38,14 @@
   transition: background .3s ease-in;
 }
 
-.blog-item-container:hover{
-  background-color: #f2f2f2;
+.blog-item-container:hover .blog-item-side-bar{
+  background-color: #007bff;
 }
 
-.blog-item-container:hover .blog-item-side-bar{
-  background-color: #fe4902;
+.blog-item-subtitle {
+  color: grey;
+}
+
+.blog-item-date {
+  color: grey;
 }
