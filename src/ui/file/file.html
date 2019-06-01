@@ -16,7 +16,7 @@
     <!-- used for include another html file -->
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
     <!--  -->
- 
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -32,13 +32,19 @@
     <!-- included html -->
     <div w3-include-html="http://127.0.0.1:81/hci-hanu/src/common/header.html"></div>
 
-    <div class="text-center alert alert-danger alert-dismissible fade show" id="alert-confirm" style="visibility: hidden" role="alert">
-            <strong>Danger!</strong> Are you sure you want to delete this?
-            
-            <button onclick="confirmAction()" type="button" class="btn btn-danger ml-5">YES</button>
-            <button onclick="cancelAction()" type="button" class="btn btn-default ml-5">NO</button>
-                  
-          </div>
+    <!-- bootbox.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
+
+    <a href="#" class="previous ml-5 mt-3 "  onclick="history.back(-1)">&laquo; Previous</a>
+
+    <div class="text-center alert alert-danger alert-dismissible fade show" id="alert-confirm"
+        style="visibility: hidden" role="alert">
+        <strong>Danger!</strong> Are you sure you want to delete this?
+
+        <button onclick="confirmAction()" type="button" class="btn btn-danger ml-5">YES</button>
+        <button onclick="cancelAction()" type="button" class="btn btn-default ml-5">NO</button>
+
+    </div>
 
     <!-- Search form -->
 
@@ -55,36 +61,48 @@
                 <div class="bg-light border-right" id="sidebar-wrapper">
                     <div class="sidebar-heading pt-4 pb-4"> FILE & FOLDER MANAGEMENT </div>
                     <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action bg-light">New Folder</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Upload folder</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">New File</a>
-                        <a href="#" class="list-group-item list-group-item-action bg-light">Upload File</a>
+                        <a onclick="createFolder()" href="#" class="list-group-item list-group-item-action bg-light">New
+                            Folder</a>
+                        <a class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                            <label class="custom-file-label" for="customFileLang">Upload Folder</label>
+                        </a>
+                        <a onclick="createFolder()" href="#" class="list-group-item list-group-item-action bg-light">New
+                            File</a>
+                        <a class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                            <label class="custom-file-label" for="customFileLang">Upload Folder</label>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- End side bar -->
+        <!-- End side bar -->
 
         <div class="col-sm-3">
             <img src="../../img/SamplePNGImage_100kbmb.png">
             <p class="mt-2">image.png</p>
             <div class="row">
-                    <div class="col-sm-6">
-                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
-                    </div>
+                <div class="col-sm-6">
+                    <button onclick="updateFolder()" class="btn btn-success"><i class="fa fa-download"></i> Rename
+                    </button>
                 </div>
-                
-                <img ondblclick="folderClicked('DBS_folder')" class="mt-5" src="../../img/folder.png">
+                <div class="col-sm-6">
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
+                </div>
+            </div>
+
+            <img ondblclick="folderClicked('DBS_folder')" class="mt-5" src="../../img/folder.png">
             <p>DBS_folder</p>
             <div class="row">
                 <div class="col-sm-6">
-                    <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                    <button onclick="updateFolder()" class="btn btn-success"><i class="fa fa-download"></i>
+                        Rename</button>
                 </div>
                 <div class="col-sm-6">
-                    <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
                 </div>
             </div>
 
@@ -93,50 +111,57 @@
             <img ondblclick="folderClicked('IST_FOLDER')" src="../../img/folder.png">
             <p class="mt-2">IST_folder</p>
             <div class="row">
-                    <div class="col-sm-6">
-                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
-                    </div>
+                <div class="col-sm-6">
+                    <button onclick="updateFolder()" class="btn btn-success"><i class="fa fa-download"></i>
+                        Rename</button>
                 </div>
+                <div class="col-sm-6">
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
+                </div>
+            </div>
 
             <img class="mt-5" src="../../img/SamplePNGImage_100kbmb.png">
             <p>image.png</p>
             <div class="row">
-                    <div class="col-sm-6">
-                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
-                    </div>
+                <div class="col-sm-6">
+                    <button onclick="updateFolder()" class="btn btn-success"><i class="fa fa-download"></i>
+                        Rename</button>
                 </div>
+                <div class="col-sm-6">
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
+                </div>
+            </div>
         </div>
         <div class="col-sm-3">
             <img src="../../img/SamplePNGImage_100kbmb.png">
             <p class="mt-2">image.png</p>
             <div class="row">
-                    <div class="col-sm-6">
-                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
-                    </div>
+                <div class="col-sm-6">
+                    <button onclick="updateFolder()" class="btn btn-success"><i class="fa fa-download"></i>
+                        Rename</button>
                 </div>
+                <div class="col-sm-6">
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
+                </div>
+            </div>
 
             <img class="mt-5" src="../../img/SamplePNGImage_100kbmb.png">
             <p class="mt-2">image.png</p>
             <div class="row">
-                    <div class="col-sm-6">
-                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
-                    </div>
+                <div class="col-sm-6">
+                    <button onclick="updateFolder()" class="btn btn-success"><i class="fa fa-download"></i>
+                        Rename</button>
                 </div>
+                <div class="col-sm-6">
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
+                </div>
+            </div>
         </div>
     </div>
-
     <script src="../../js/file/script.js"></script>
     <script>
         w3IncludeHTML();
