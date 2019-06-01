@@ -10,15 +10,13 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
 </head>
 
 <body>
     <!-- used for include another html file -->
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
     <!--  -->
-    <script src="../../js/file/script.js"></script>
+ 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -49,6 +47,7 @@
         <input class="form-control ml-1" type="text" placeholder="Search for Files and Folders" aria-label="Search">
     </div>
 
+    <!-- Side bar is put inside rows for grid division -->
     <!-- Sidebar -->
     <div class="row pt-3 pl-2 ml-1">
         <div class="col-sm-2">
@@ -71,7 +70,7 @@
             <p class="mt-2">image.png</p>
             <div class="row">
                     <div class="col-sm-6">
-                        <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
                     </div>
                     <div class="col-sm-6">
                         <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
@@ -82,7 +81,7 @@
             <p>DBS_folder</p>
             <div class="row">
                 <div class="col-sm-6">
-                    <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                    <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
                 </div>
                 <div class="col-sm-6">
                     <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
@@ -91,11 +90,11 @@
 
         </div>
         <div class="col-sm-3">
-            <img src="../../img/folder.png">
+            <img ondblclick="folderClicked('IST_FOLDER')" src="../../img/folder.png">
             <p class="mt-2">IST_folder</p>
             <div class="row">
                     <div class="col-sm-6">
-                        <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
                     </div>
                     <div class="col-sm-6">
                         <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
@@ -106,7 +105,7 @@
             <p>image.png</p>
             <div class="row">
                     <div class="col-sm-6">
-                        <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
                     </div>
                     <div class="col-sm-6">
                         <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
@@ -118,7 +117,7 @@
             <p class="mt-2">image.png</p>
             <div class="row">
                     <div class="col-sm-6">
-                        <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
                     </div>
                     <div class="col-sm-6">
                         <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
@@ -129,7 +128,7 @@
             <p class="mt-2">image.png</p>
             <div class="row">
                     <div class="col-sm-6">
-                        <button class="btn btn-success"><i class="fa fa-download"></i> Download</button>
+                        <button onclick = "folderDownload()" class="btn btn-success"><i class="fa fa-download"></i> Download</button>
                     </div>
                     <div class="col-sm-6">
                         <button onclick = "folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
@@ -138,23 +137,11 @@
         </div>
     </div>
 
-
-
-
-    <!-- end side bar -->
-
-
-
-
-
-
-
+    <script src="../../js/file/script.js"></script>
     <script>
         w3IncludeHTML();
     </script>
     <!-- end -->
-
-
 
 </body>
 

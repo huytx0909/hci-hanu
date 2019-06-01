@@ -1,11 +1,16 @@
 function folderClicked(folderName) {
-    alert("folder clicked" + folderName);
+    localStorage.setItem("folderName", folderName);
+    window.location.href = "http://127.0.0.1:81/hci-hanu/src/ui/file/nested-file.html#";
+}
+
+function getFolderName() {
+    document.getElementById("folder-name").innerHTML = localStorage.getItem("folderName");
 }
 
 function folderDelete() {
     homeClick();
     var myClass = document.getElementsByClassName("alert");
-    for (var i = 0; i < myClass.length; i++) {
+    for (var i = 0; i < myClass.length; i++) { 
         myClass[i].style.visibility = 'visible';
       }
 }
@@ -42,4 +47,8 @@ function homeClick() {
 	elmnt.scrollIntoView({
 	 behavior: 'smooth', block: "start"}
 	);
+}
+
+function folderDownload() {
+    alert("Your folder has been downloaded");
 }

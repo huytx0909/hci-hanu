@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>File & Folder Management</title>
+    <meta name="file-management" content="">
+    <meta name="huytx" content="">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- used for include another html file -->
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <!--  -->
+    <script src="../../js/file/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- favicons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- included html -->
+    <div w3-include-html="http://127.0.0.1:81/hci-hanu/src/common/header.html"></div>
+
+    <div class="text-center alert alert-danger alert-dismissible fade show" id="alert-confirm"
+        style="visibility: hidden" role="alert">
+        <strong>Danger!</strong> Are you sure you want to delete this?
+
+        <button onclick="confirmAction()" type="button" class="btn btn-danger ml-5">YES</button>
+        <button onclick="cancelAction()" type="button" class="btn btn-default ml-5">NO</button>
+
+    </div>
+
+    <!-- Search form -->
+
+    <div class="active-purple-3 active-purple-4 mt-4 mb-4 has-search">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input class="form-control ml-1" type="text" placeholder="Search for Files and Folders" aria-label="Search">
+    </div>
+
+    <!-- Side bar is put inside rows for grid division -->
+    <!-- Sidebar -->
+    <div class="text-center">
+        <h2 id="folder-name">
+            <script> getFolderName() </script>
+        </h2>
+    </div>
+    <div class="row pt-3 pl-2 ml-1">
+        <div class="col-sm-2">
+            <div class="d-flex">
+                <div class="bg-light border-right" id="sidebar-wrapper">
+                    <div class="sidebar-heading pt-4 pb-4"> FILE & FOLDER MANAGEMENT </div>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action bg-light">New Folder</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Upload folder</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">New File</a>
+                        <a href="#" class="list-group-item list-group-item-action bg-light">Upload File</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End side bar -->
+
+        <div class="col-sm-3">
+            <img src="../../img/SamplePNGImage_100kbmb.png">
+            <p class="mt-2">image.png</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <button onclick="folderDownload()" class="btn btn-success"><i class="fa fa-download"></i>
+                        Download</button>
+                </div>
+                <div class="col-sm-6">
+                    <button onclick="folderDelete()" class="btn btn-danger"><i class="far fa-trash-alt"></i>
+                        Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        w3IncludeHTML();
+    </script>
+    <!-- end -->
+
+</body>
+
+</html>
