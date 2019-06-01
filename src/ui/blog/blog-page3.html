@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Blog </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <div class="row" style="height: 50px">
+    <div class="col-md-2 col-sm-2">
+      <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+    </div>
+
+    <div class="col-md-7 col-sm-7"></div>
+
+    <div class="col-md-3 col-sm-3 mt-2">
+      <a class="text-secondary">Become a member</a>
+      <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light justify-content-between" style="opacity: 0.8">
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+    <form class="form-inline mr-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <h1 class="text-center mt-4">Latest Blog Posts</h1>
+
+  <div id="main-blog-container" class="container-fluid row mt-4">
+    <!-- LEFT SIDE OF MAIN CONTENT -->
+    <div class="col-md-8 col-sm-12">
+      <!-- A typical Blog post-->
+      <a href="#">
+        <div id="blog-item" class="container row blog-item-container blog-item-content">
+          <div class="blog-item-side-bar" style="width:7px"></div>
+          <div class="col-md-3 col-sm-12 mt-3">
+            <img src="./img/kotlin.png" style="width: 100%;height: 80%;">
+          </div>
+          <div class="col-md-8 col-sm-12 mt-3">
+            <!-- Link : https://medium.com/androiddevelopers/coroutines-on-android-part-ii-getting-started-3bff117176dd-->
+            <h4>Coroutines on Android (part II): Getting started</h4>
+            <p class="blog-item-subtitle">This is part of a multi-part series about using Coroutines on Android. This
+              post focuses on starting work...</p>
+            <p class="text-left blog-item-category">Category : Technology Android Kotlin</p>
+            <p class="text-right blog-item-date">May 2 · 12 min read</p>
+          </div>
+        </div>
+      </a>
+      <hr />
+      <!-- End of a typical blog post -->
+
+      <!-- A typical Blog post-->
+      <a href="#">
+        <div id="blog-item" class="container row blog-item-container blog-item-content">
+          <div class="blog-item-side-bar" style="width:7px"></div>
+          <div class="col-md-3 col-sm-12 mt-3">
+            <img src="./img/kotlin.png" style="width: 100%;height: 80%;">
+          </div>
+          <div class="col-md-8 col-sm-12 mt-3">
+            <!-- Link : https://medium.com/androiddevelopers/coroutines-on-android-part-iii-real-work-2ba8a2ec2f45-->
+            <h4>Coroutines On Android (part III): Real work</h4>
+            <p class="blog-item-subtitle">This is part of a multi-part series about using Coroutines on Android. This
+              post focuses on solving practical problems using coroutines...</p>
+            <p class="text-left blog-item-category">Category : Technology Android Kotlin</p>
+            <p class="text-right blog-item-date">May 22 · 12 min read</p>
+          </div>
+        </div>
+      </a>
+      <hr />
+      <!-- End of a typical blog post -->
+      <!-- Pagination -->
+      <nav aria-label="Page navigation example" style="margin-left:40%;">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="./blog-page2.html" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="./blog.html">1</a></li>
+          <li class="page-item"><a class="page-link" href="./blog-page2.html">2</a></li>
+          <li class="page-item active"><a class="page-link" href="#">3</a></li>
+        </ul>
+      </nav>
+      <!-- End of Pagination -->
+    </div>
+    <!-- Blank div for spacing-->
+    <div class="col-md-1 col-sm-0"></div>
+    <!-- Right side of main content -->
+    <div class="col-md-3 col-sm-12">
+      <div class="sticky-top">
+        <div style="height:70px"></div>
+        <h2>Top stories</h2>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

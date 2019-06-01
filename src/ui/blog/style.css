@@ -1,7 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 hr {
   margin-left:6%;
   margin-right:6%;
   height:2px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .my-nav-link{
