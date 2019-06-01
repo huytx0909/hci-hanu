@@ -50,7 +50,7 @@
 
     <div class="active-purple-3 active-purple-4 mt-4 mb-4 has-search">
         <span class="fa fa-search form-control-feedback"></span>
-        <input class="form-control ml-1" type="text" placeholder="Search for Files and Folders" aria-label="Search">
+        <input onclick="search()" id="search-btn" class="form-control ml-1" type="text" placeholder="Search for Files and Folders" aria-label="Search">
     </div>
 
     <!-- Side bar is put inside rows for grid division -->
@@ -63,13 +63,13 @@
                     <div class="list-group list-group-flush">
                         <a onclick="createFolder()" href="#" class="list-group-item list-group-item-action bg-light">New
                             Folder</a>
-                        <a class="custom-file">
+                        <a class="custom-file" href="#">
                             <input type="file" class="custom-file-input" id="customFileLang" lang="es">
                             <label class="custom-file-label" for="customFileLang">Upload Folder</label>
                         </a>
                         <a onclick="createFolder()" href="#" class="list-group-item list-group-item-action bg-light">New
                             File</a>
-                        <a class="custom-file">
+                        <a class="custom-file" href="#">
                             <input type="file" class="custom-file-input" id="customFileLang" lang="es">
                             <label class="custom-file-label" for="customFileLang">Upload Folder</label>
                         </a>

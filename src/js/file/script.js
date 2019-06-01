@@ -1,3 +1,7 @@
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
+
 function folderClicked(folderName) {
     localStorage.setItem("folderName", folderName);
     window.location.href = "http://127.0.0.1:81/hci-hanu/src/ui/file/nested-file.html#";
@@ -48,7 +52,24 @@ function createFolder(folderName) {
 }
 
 function search(name) {
-    alert(name);
+    var input = document.getElementById("search-btn");
+    input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            var dialog = bootbox.dialog({
+                title: 'Searching',
+                message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
+            });
+
+            dialog.init(function () {
+                setTimeout(function () {
+                    dialog.find('.bootbox-body').html('Here are the results');
+                }, 3000);
+            });
+            sleep(1000).then(() => {
+                location.reload();
+            })
+        }
+    });
 }
 
 function confirmAction() {
