@@ -15,123 +15,141 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./blog-detail.css">
   <script src="./script.js"></script>
+  <!-- used for include another html file -->
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  <!--  -->
 </head>
 
 <body>
-  <div class="row" style="height: 50px">
-    <div class="col-md-2 col-sm-2">
-      <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+  <div style="background-color: white; margin: 2%;" class="card">
+    <div class="row" style="height: 15%">
+      <div class="col-md-2 col-sm-12">
+        <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+      </div>
+      <div class="col-md-7 col-sm-0"></div>
+      <div class="col-md-3 col-sm-12 mt-2">
+        <a class="text-secondary">Become a member</a>
+        <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
+      </div>
     </div>
-
-    <div class="col-md-7 col-sm-7"></div>
-
-    <div class="col-md-3 col-sm-3 mt-2">
-      <a class="text-secondary">Become a member</a>
-      <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light justify-content-between" style="opacity: 0.8">
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Mobile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Web</a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="container-fluid">
-    <div class="row">
-      <img src="./img/kotlin.png" style="width:100%; height:250px">
-      <!-- AUTHOR- LEFT-->
-      <div class="col-md-2 col-sm-2 mt-5 text-center">
-        <div class="sticky-top">
-          <div style="height: 70px; width: 70px;"></div>
-          <div class="mt-5">
-            Author data
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-sm sticky-top navbar-light justify-content-between" style="background-color:white">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./blog.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./blog-mobile.html">Mobile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./blog-web.html">Web</a>
+          </li>
+      </ul>
+      <div class="form-inline mr-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <a href="./blog-search-kotlin.html"><button class="btn btn-outline-primary my-2 my-sm-0">Search</button></a>
+      </div>
+    </nav>
+    <!-- Below nav, main content-->
+    <div class="container-fluid">
+      <div class="row mt-2">
+        <img src="./img/kotlin.png" style="width:100%; height:250px">
+        <!-- AUTHOR- LEFT-->
+        <div class="col-md-2 col-sm-2 mt-5 text-center">
+          <div class="sticky-top">
+            <div style="height: 70px; width: 70px;"></div>
+            <div class="mt-5">
+              <img src="./img/Picture-of-person.png" alt="Avatar" class="avatar">
+              <h5 class="mt-2">Mc Gregor</h5>
+              <p class="blog-item-subtitle">Freelance Android Programmer</p>
+              <div class="mt-5">
+                <a id="like-link" style="color:blue; cursor: pointer;" onclick="like()">Like</a> <img id="like-img"
+                  src="./img/icon.png" style="height:20%; width:20%; visibility: hidden;">
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- END AUTHOR- LEFT-->
-      <!-- MAIN CONTENT -->
-      <div class="col-md-8 col-sm-10 mt-5 mr-5 ml-5">
-        <h1>Coroutines on Android (part I): Getting the background</h1>
-        <br>
-        <h5 class="blog-item-subtitle" style="margin: 2% 8%;">This is part of a multi-part series about using
-          Coroutines on Android. This post
-          focuses on how coroutines
-          work and what problems they solve.</h5>
-        <br>
-        <h4>Other articles in this series : </h4>
+        <!-- END AUTHOR- LEFT-->
+        <!-- MAIN CONTENT -->
+        <div class="col-md-8 col-sm-10 mt-5 mr-5 ml-5">
+          <h1>Coroutines on Android (part I): Getting the background</h1>
+          <br>
+          <h5 class="blog-item-subtitle" style="margin: 2% 8%;">This is part of a multi-part series about using
+            Coroutines on Android. This post
+            focuses on how coroutines
+            work and what problems they solve.</h5>
+          <br>
+          <h4>Other articles in this series : </h4>
 
-        <a href="#">
-          <div class="card blog-detail-related-card">
-            <div class="row">
-              <div class="col-md-9">
-                <h4>Coroutines on Android (part II): Getting started</h4>
-                <p class="my-card-subtitle">This is part of a multi-part series about using Coroutines on Android. This
-                  post focuses on starting work and keeping track of work that has been started.</p>
-              </div>
-              <div class="col-md-3">
-                <img src="./img/kotlin.png" style="width:100%; height:100%">
-              </div>
-            </div>
-          </div>
-        </a>
-        <!-- second card -->
-        <a href="#">
-          <div class="card blog-detail-related-card">
-            <div class="row">
-              <div class="col-md-9">
-                <h4>Coroutines on Android (part III): Real work</h4>
-                <p class="my-card-subtitle">Learn how to use coroutines to do real work like using a database or making
-                  a network request
-              </div>
-              <div class="col-md-3">
-                <img src="./img/kotlin.png" style="width:100%; height:100%">
+          <a href="./blog-detail-kotlin-2.html">
+            <div class="card blog-detail-related-card">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>Coroutines on Android (part II): Getting started</h4>
+                  <p class="my-card-subtitle">This is part of a multi-part series about using Coroutines on Android.
+                    This
+                    post focuses on starting work and keeping track of work that has been started.</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="./img/kotlin.png" style="width:100%; height:100%">
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-        <!-- end second card-->
-        <br>
-        <h2>What problems do coroutines solve?</h2>
-        <br> <br>
-        <p>Kotlin coroutines introduce a new style of concurrency that can be used on Android to simplify async code.
-          While they’re new to Kotlin in 1.3, the concept of coroutines has been around since the dawn of programming
-          languages. The first language to explore using coroutines was Simula in 1967.</p>
-        <p>In the last few years, coroutines have grown in popularity and are now included in many popular programming
-          languages such as Javascript, C#, Python, Ruby, and Go to name a few. Kotlin coroutines are based on
-          established concepts that have been used to build large applications.</p>
-        <p>On Android, coroutines are a great solution to two problems:</p>
-        <ol>
-          <li><b>Long running tasks</b> are tasks that take too long to block the main thread.</li>
-          <li><b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.</li>
-        </ol>
-        <p>Let’s dive in to each to see how coroutines can help us structure code in a cleaner way!</p>
-        <p>Fetching a webpage or interacting with an API both involve making a network request. Similarly, reading from
-          a database or loading an image from disk involve reading a file. These sorts of things are what I call long
-          running tasks — tasks that take far too long for your app to stop and wait for them!</p>
-        <p>It can be hard to understand how fast a modern phone executes code compared to a network request. On a Pixel
-          2, a single CPU cycle takes just under 0.0000000004 seconds, a number that’s pretty hard to grasp in human
-          terms. However, if you think of a network request as one blink of the eye, around 400 milliseconds (0.4
-          seconds), it’s easier to understand how fast the CPU operates. In one blink of an eye, or a somewhat slow
-          network request, the CPU can execute over one million cycles!</p>
-        <p>On Android, every app has a main thread that is in charge of handling UI (like drawing views) and
-          coordinating user interactions. If there is too much work happening on this thread, the app appears to hang
-          or slow down, leading to an undesirable user experience. Any long running task should be done without
-          blocking the main thread, so your app doesn’t display what’s called “jank,” like frozen animations, or
-          respond slowly to touch events.</p>
-        <p>In order to perform a network request off the main thread, a common pattern is callbacks. Callbacks provide
-          a handle to a library that it can use to call back into your code at some future time. With callbacks,
-          fetching developer.android.com might look like this:</p>
-        <br>
-        <code>
+          </a>
+          <!-- second card -->
+          <a href="#">
+            <div class="card blog-detail-related-card">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>Coroutines on Android (part III): Real work</h4>
+                  <p class="my-card-subtitle">Learn how to use coroutines to do real work like using a database or
+                    making
+                    a network request
+                </div>
+                <div class="col-md-3">
+                  <img src="./img/kotlin.png" style="width:100%; height:100%">
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- end second card-->
+          <br>
+          <h2>What problems do coroutines solve?</h2>
+          <br> <br>
+          <p>Kotlin coroutines introduce a new style of concurrency that can be used on Android to simplify async code.
+            While they’re new to Kotlin in 1.3, the concept of coroutines has been around since the dawn of programming
+            languages. The first language to explore using coroutines was Simula in 1967.</p>
+          <p>In the last few years, coroutines have grown in popularity and are now included in many popular programming
+            languages such as Javascript, C#, Python, Ruby, and Go to name a few. Kotlin coroutines are based on
+            established concepts that have been used to build large applications.</p>
+          <p>On Android, coroutines are a great solution to two problems:</p>
+          <ol>
+            <li><b>Long running tasks</b> are tasks that take too long to block the main thread.</li>
+            <li><b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.
+            </li>
+          </ol>
+          <p>Let’s dive in to each to see how coroutines can help us structure code in a cleaner way!</p>
+          <p>Fetching a webpage or interacting with an API both involve making a network request. Similarly, reading
+            from
+            a database or loading an image from disk involve reading a file. These sorts of things are what I call long
+            running tasks — tasks that take far too long for your app to stop and wait for them!</p>
+          <p>It can be hard to understand how fast a modern phone executes code compared to a network request. On a
+            Pixel
+            2, a single CPU cycle takes just under 0.0000000004 seconds, a number that’s pretty hard to grasp in human
+            terms. However, if you think of a network request as one blink of the eye, around 400 milliseconds (0.4
+            seconds), it’s easier to understand how fast the CPU operates. In one blink of an eye, or a somewhat slow
+            network request, the CPU can execute over one million cycles!</p>
+          <p>On Android, every app has a main thread that is in charge of handling UI (like drawing views) and
+            coordinating user interactions. If there is too much work happening on this thread, the app appears to hang
+            or slow down, leading to an undesirable user experience. Any long running task should be done without
+            blocking the main thread, so your app doesn’t display what’s called “jank,” like frozen animations, or
+            respond slowly to touch events.</p>
+          <p>In order to perform a network request off the main thread, a common pattern is callbacks. Callbacks provide
+            a handle to a library that it can use to call back into your code at some future time. With callbacks,
+            fetching developer.android.com might look like this:</p>
+          <br>
+          <code>
           <pre>
           class ViewModel: ViewModel() {
             fun fetchDocs() {
@@ -142,19 +160,21 @@
           }
           </pre>
         </code>
-        <br>
-        <p>Even though <code>get</code> is called from the main thread, it will use another thread to perform the
-          network request. Then, once the result is available from the network, the callback will be called on the main
-          thread. This is a great way to handle long running tasks, and libraries like Retrofit can help you make
-          network requests without blocking the main thread.</p>
-        <br>
-        <h2>Using coroutines for long running tasks</h2>
-        <br> <br>
-        <p>Coroutines are a way to simplify the code used to manage long running tasks like <code>fetchDocs</code>. To
-          explore how coroutines make the code for long running tasks simpler, let’s rewrite the callback example above
-          to use coroutines.</p>
-        <br>
-        <code>
+          <br>
+          <p>Even though <code>get</code> is called from the main thread, it will use another thread to perform the
+            network request. Then, once the result is available from the network, the callback will be called on the
+            main
+            thread. This is a great way to handle long running tasks, and libraries like Retrofit can help you make
+            network requests without blocking the main thread.</p>
+          <br>
+          <h2>Using coroutines for long running tasks</h2>
+          <br> <br>
+          <p>Coroutines are a way to simplify the code used to manage long running tasks like <code>fetchDocs</code>. To
+            explore how coroutines make the code for long running tasks simpler, let’s rewrite the callback example
+            above
+            to use coroutines.</p>
+          <br>
+          <code>
           <pre>
               // Dispatchers.Main
               suspend fun fetchDocs() {
@@ -167,62 +187,99 @@
               suspend fun get(url: String) = withContext(Dispatchers.IO){/*...*/}
           </pre>
         </code>
-        <br>
-        <p>Doesn’t this code block the main thread? How does it return a result from <code>get</code> without waiting
-          for the
-          network request and blocking? It turns out coroutines provide a way for Kotlin to execute this code and never
-          block the main thread.</p>
-        <p>Coroutines build upon regular functions by adding two new operations. In addition to <b>invoke</b> (or call)
-          and <b>return</b>, coroutines add <b>suspend</b> and <b>resume</b>.</p>
-        <ol>
-          <li><b>suspend</b> — pause the execution of the current coroutine, saving all local variables</li>
-          <li><b>resume</b> — continue a suspended coroutine from the place it was paused</li>
-        </ol>
-        <p>
-          This functionality is added by Kotlin by the suspend keyword on the function. You can only call suspend
-          functions from other suspend functions, or by using a coroutine builder like launch to start a new coroutine.
-        </p>
-        <blockquote class="quote-card blue-card">
+          <br>
+          <p>Doesn’t this code block the main thread? How does it return a result from <code>get</code> without waiting
+            for the
+            network request and blocking? It turns out coroutines provide a way for Kotlin to execute this code and
+            never
+            block the main thread.</p>
+          <p>Coroutines build upon regular functions by adding two new operations. In addition to <b>invoke</b> (or
+            call)
+            and <b>return</b>, coroutines add <b>suspend</b> and <b>resume</b>.</p>
+          <ol>
+            <li><b>suspend</b> — pause the execution of the current coroutine, saving all local variables</li>
+            <li><b>resume</b> — continue a suspended coroutine from the place it was paused</li>
+          </ol>
           <p>
-            Suspend and resume work together to replace callbacks.
+            This functionality is added by Kotlin by the suspend keyword on the function. You can only call suspend
+            functions from other suspend functions, or by using a coroutine builder like launch to start a new
+            coroutine.
           </p>
-        </blockquote>
-        <p>
-          In the example above, <code>get</code> will <b>suspend</b> the coroutine before it starts the network
-          request. The function <code>get</code>
-          will still be responsible for running the network request off the main thread. Then, when the network request
-          completes, instead of calling a callback to notify the main thread, it can simply <b>resume</b> the coroutine
-          it
-          suspended.
-        </p>
-        <br>
-        <img src="./img/coroutine_callback.gif">
-        <br><br><br>
-        <p>Looking at how <code>fetchDocs</code> executes, you can see how suspend works. Whenever a coroutine is
-          suspended, the
-          current stack frame (the place that Kotlin uses to keep track of which function is running and its variables)
-          is copied and saved for later. When it resumes, the stack frame is copied back from where it was saved and
-          starts running again. In the middle of the animation — when all of the coroutines on the main thread are
-          suspended, the main thread is free to update the screen and handle user events. Together, suspend and resume
-          replace callbacks. Pretty neat!</p>
-        <p>In the next post we’ll explore how they fit in on Android to keep track of all the work you started from a
-          screen! Give it a read:</p>
+          <blockquote class="quote-card blue-card">
+            <p>
+              Suspend and resume work together to replace callbacks.
+            </p>
+          </blockquote>
+          <p>
+            In the example above, <code>get</code> will <b>suspend</b> the coroutine before it starts the network
+            request. The function <code>get</code>
+            will still be responsible for running the network request off the main thread. Then, when the network
+            request
+            completes, instead of calling a callback to notify the main thread, it can simply <b>resume</b> the
+            coroutine
+            it
+            suspended.
+          </p>
+          <br>
+          <img src="./img/coroutine_callback.gif">
+          <br><br><br>
+          <p>Looking at how <code>fetchDocs</code> executes, you can see how suspend works. Whenever a coroutine is
+            suspended, the
+            current stack frame (the place that Kotlin uses to keep track of which function is running and its
+            variables)
+            is copied and saved for later. When it resumes, the stack frame is copied back from where it was saved and
+            starts running again. In the middle of the animation — when all of the coroutines on the main thread are
+            suspended, the main thread is free to update the screen and handle user events. Together, suspend and resume
+            replace callbacks. Pretty neat!</p>
+          <p>In the next post we’ll explore how they fit in on Android to keep track of all the work you started from a
+            screen! Give it a read:</p>
 
-        <div class="card blog-detail-related-card">
-          <h5>Some data</h5>
-          <p>A lot of subtitle</p>
+          <a href="#">
+            <div class="card blog-detail-related-card">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>Coroutines on Android (part II): Getting started</h4>
+                  <p class="my-card-subtitle">This is part of a multi-part series about using Coroutines on Android.
+                    This
+                    post focuses on starting work and keeping track of work that has been started.</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="./img/kotlin.png" style="width:100%; height:100%">
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <h5> <span>Category : </span>
+            <a href="./blog-category-kotlin.html" class="badge badge-secondary">Kotlin</a>
+            <a href="#" class="badge badge-secondary">Android</a>
+            <a href="#" class="badge badge-secondary">Programming</a>
+            <a href="#" class="badge badge-secondary">Coroutine</a>
+          </h5>
+          <!-- END MAIN CONTENT-->
         </div>
+        <!-- BLANK ON THE RIGHT-->
+        <div class="col-md-2 col-sm-0 mt-5">
 
-        <p> List of tags : Kotlin Android Coroutine Asynchronous Programming</p>
-        <!-- END MAIN CONTENT-->
+        </div>
+        <!-- END BLANK RIGHT-->
       </div>
-      <!-- BLANK ON THE RIGHT-->
-      <div class="col-md-2 col-sm-0 mt-5">
-
-      </div>
-      <!-- END BLANK RIGHT-->
     </div>
   </div>
 </body>
+<script>
+  liked = false;
+  function like() {
+    if (liked) { // unlike here
+      document.getElementById("like-img").style.visibility = "hidden";
+      document.getElementById("like-link").innerHTML = "Like";
+      liked = false;
+    } else { // like here
+      document.getElementById("like-img").style.visibility = "visible";
+      document.getElementById("like-link").innerHTML = "UnLike";
+      liked = true;
+    }
+  }
+</script>
 
 </html>

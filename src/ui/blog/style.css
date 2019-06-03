@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #007bff;
 }
 
 hr {
@@ -57,4 +58,17 @@ a:hover {
 
 .blog-item-date {
   color: grey;
+}
+
+.main-blog-container {
+  
+}
+
+.avatar {
+  border-radius: 50%; 
+  height: 50%; 
+  width:50%;
+  border-width: 2px;   
+  border-color: #007bff;   
+  border-style: solid;
 }
