@@ -1,6 +1,6 @@
 const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
-  }
+}
 
 function folderClicked(folderName) {
     localStorage.setItem("folderName", folderName);
@@ -8,7 +8,7 @@ function folderClicked(folderName) {
 }
 
 function getFolderName() {
-    document.getElementById("folder-name").innerHTML = localStorage.getItem("folderName");
+    window.onload = function () { document.getElementById("folder-name").innerHTML = localStorage.getItem("folderName");}
 }
 
 function folderDelete() {
@@ -65,7 +65,7 @@ function search(name) {
                     dialog.find('.bootbox-body').html('Here are the results');
                 }, 3000);
             });
-            sleep(1000).then(() => {
+            sleep(4000).then(() => {
                 location.reload();
             })
         }
