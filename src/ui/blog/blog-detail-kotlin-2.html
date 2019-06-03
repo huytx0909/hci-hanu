@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Coroutines on Android (part I): Getting the background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./blog-detail.css">
+  <script src="./script.js"></script>
+  <!-- used for include another html file -->
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  <!--  -->
+</head>
+
+<body>
+  <div style="background-color: white; margin: 2%;" class="card">
+    <div class="row" style="height: 15%">
+      <div class="col-md-2 col-sm-12">
+        <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+      </div>
+      <div class="col-md-7 col-sm-0"></div>
+      <div class="col-md-3 col-sm-12 mt-2">
+        <a class="text-secondary">Become a member</a>
+        <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
+      </div>
+    </div>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-sm sticky-top navbar-light justify-content-between" style="background-color:white">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./blog.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./blog-mobile.html">Mobile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./blog-web.html">Web</a>
+          </li>
+      </ul>
+      <div class="form-inline mr-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <a href="./blog-search-kotlin.html"><button class="btn btn-outline-primary my-2 my-sm-0">Search</button></a>
+      </div>
+    </nav>
+    <!-- Below nav, main content-->
+    <div class="container-fluid">
+      <div class="row mt-2">
+        <img src="./img/kotlin.png" style="width:100%; height:250px">
+        <!-- AUTHOR- LEFT-->
+        <div class="col-md-2 col-sm-2 mt-5 text-center">
+          <div class="sticky-top">
+            <div style="height: 70px; width: 70px;"></div>
+            <div class="mt-5">
+              <img src="./img/Picture-of-person.png" alt="Avatar" class="avatar">
+              <h5 class="mt-2">Mc Gregor</h5>
+              <p class="blog-item-subtitle">Freelance Android Programmer</p>
+              <div class="mt-5">
+                <a id="like-link" style="color:blue; cursor: pointer;" onclick="like()">Like</a> <img id="like-img"
+                  src="./img/icon.png" style="height:20%; width:20%; visibility: hidden;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END AUTHOR- LEFT-->
+        <!-- MAIN CONTENT -->
+        <div class="col-md-8 col-sm-10 mt-5 mr-5 ml-5">
+          <h1>Coroutines on Android (part II): Getting started</h1>
+          <br>
+          <h5 class="blog-item-subtitle" style="margin: 2% 8%;">This is part of a multi-part series about using
+            Coroutines on Android. This post
+            focuses on how coroutines
+            work and what problems they solve.</h5>
+          <br>
+          <h4>Other articles in this series : </h4>
+
+          <a href="#">
+            <div class="card blog-detail-related-card">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>Coroutines on Android (part I): Getting the background</h4>
+                  <p class="my-card-subtitle">This is part of a multi-part series about using Coroutines on Android.
+                    This
+                    post focuses on starting work and keeping track of work that has been started.</p>
+                </div>
+                <div class="col-md-3">
+                  <img src="./img/kotlin.png" style="width:100%; height:100%">
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- second card -->
+          <a href="#">
+            <div class="card blog-detail-related-card">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>Coroutines on Android (part III): Real work</h4>
+                  <p class="my-card-subtitle">Learn how to use coroutines to do real work like using a database or
+                    making
+                    a network request
+                </div>
+                <div class="col-md-3">
+                  <img src="./img/kotlin.png" style="width:100%; height:100%">
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- end second card-->
+          <br>
+          <h2>Keeping track of coroutines</h2>
+          <br> <br>
+          <p>In part one, we explored the problems that coroutines are great at solving. As a recap, coroutines are a
+            great solution to two common programming problems:</p>
+          <ol>
+            <li><b>Long running tasks</b> are tasks that take too long to block the main thread.</li>
+            <li><b>Main-safety</b> allows you to ensure that any suspend function can be called from the main thread.
+            </li>
+          </ol>
+          <p>To solve these problems, coroutines build upon regular functions by adding <b>suspend</b> and
+            <b>resume</b>. When all
+            coroutines on a particular thread are suspended, the thread is free to do other work.</p>
+          <p>However, coroutines by themselves don’t help you keep track of the work that’s being done. It’s perfectly
+            fine to have a large number of coroutines — hundreds or even thousands — and have all of them suspended at
+            the same time. And, while coroutines are cheap, the work they perform is often expensive, like reading files
+            or making network requests.</p>
+          <p>It’s quite difficult to keep track of one thousand coroutines manually using code. You could try to track
+            all of them and manually ensure they complete or cancel, but code like this is tedious and error prone. If
+            the code is not perfect, it will lose track of a coroutine, which is what I call a work leak.</p>
+          <p>A work leak is like a memory leak, but worse. It’s a coroutine that’s been lost. In addition to using
+            memory, a work leak can resume itself to use CPU, disk, or even launch a network request.</p>
+          <p>To help avoid leaking coroutines, Kotlin introduced structured concurrency. Structured concurrency is a
+            combination of language features and best practices that, when followed, help you keep track of all work
+            running in coroutines.</p>
+          <p>On Android, we can use structured concurrency to do three things:
+          </p>
+          <br>
+          <ol>
+            <li><b>Cancel work</b> when it is no longer needed.</li>
+            <li><b>Keep track</b> of work while it’s running.</li>
+            <li><b>Signal errors</b> when a coroutine fails.</li>
+          </ol>
+          <br>
+          <p>Lets dive into each of these and see how structured concurrency helps us make sure we never lose track of a
+            coroutine and leak work..</p>
+          <br>
+          <h2>Cancel work with scopes</h2>
+          <br> <br>
+          <p>In Kotlin, coroutines must run in something called a CoroutineScope. A <code>CoroutineScope</code> keeps
+            track of your
+            coroutines, even coroutines that are suspended. Unlike the Dispatchers we talked about in part one, it
+            doesn’t actually execute your coroutines — it just makes sure you don’t lose track of them.</p>
+          <br>
+          <br>
+          <p>To ensure that all coroutines are tracked, Kotlin does not allow you to start a new coroutine without a
+            CoroutineScope. You can think of a CoroutineScope as sort of like lightweight version of an ExecutorService
+            with superpowers. It grants you the ability to start new coroutines which come with all that suspend and
+            resume goodness we explored in part one.</p>
+          <p>A CoroutineScope keeps track of all your coroutines, and it can cancel all of the coroutines started in it.
+            This fits well with Android development where you want to ensure that you clean up everything that was
+            started by a screen when the user leaves.</p>
+          <blockquote class="quote-card blue-card">
+            <p>
+              A CoroutineScope keeps track of all your coroutines, and it can cancel all of the coroutines started in
+              it.
+            </p>
+          </blockquote>
+          <br>
+          <h2>Starting new coroutines</h2>
+          <br> <br>
+          <p>
+            It’s important to note that you can’t just call a suspend function from anywhere. The suspend and resume
+            mechanism requires that you switch from normal functions to a coroutine.
+          </p>
+          <p>There are two ways to start coroutines, and they have different uses:</p>
+          <ol>
+            <li><b>launch</b> builder will start a new coroutine that is “fire and forget” — that means it won’t return
+              the result to the caller.</li>
+            <li><b>async</b> builder will start a new coroutine, and it allows you to return a result with a suspend
+              function called <code>await</code>.</li>
+          </ol>
+
+          <p>In almost all cases, the right answer for how to start a coroutine from a regular function is to use
+            launch. Since the regular function has no way to call await (remember, it can’t call suspend functions
+            directly) it doesn’t make much sense to use async as your main entry to coroutines. We’ll talk later about
+            when it makes sense to use async.</p>
+          <p>We will discuss more in the next part</p>
+          <a href="#">
+            <div class="card blog-detail-related-card">
+              <div class="row">
+                <div class="col-md-9">
+                  <h4>Coroutines on Android (part III): Real work</h4>
+                  <p class="my-card-subtitle">Learn how to use coroutines to do real work like using a database or
+                    making
+                    a network request
+                </div>
+                <div class="col-md-3">
+                  <img src="./img/kotlin.png" style="width:100%; height:100%">
+                </div>
+              </div>
+            </div>
+          </a>
+          <!-- CATEGORIES -->
+          <h5> <span>Category : </span>
+            <a href="./blog-category-kotlin.html" class="badge badge-secondary">Kotlin</a>
+            <a href="#" class="badge badge-secondary">Android</a>
+            <a href="#" class="badge badge-secondary">Programming</a>
+            <a href="#" class="badge badge-secondary">Coroutine</a>
+          </h5>
+          <!-- END MAIN CONTENT-->
+        </div>
+        <!-- BLANK ON THE RIGHT-->
+        <div class="col-md-2 col-sm-0 mt-5">
+
+        </div>
+        <!-- END BLANK RIGHT-->
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  liked = false;
+  function like() {
+    if (liked) { // unlike here
+      document.getElementById("like-img").style.visibility = "hidden";
+      document.getElementById("like-link").innerHTML = "Like";
+      liked = false;
+    } else { // like here
+      document.getElementById("like-img").style.visibility = "visible";
+      document.getElementById("like-link").innerHTML = "UnLike";
+      liked = true;
+    }
+  }
+</script>
+
+</html>

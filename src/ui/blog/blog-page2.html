@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Blog </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <div style="background-color: white; margin: 2%;" class="card">
+    <div class="row" style="height: 15%">
+      <div class="col-md-2 col-sm-12">
+        <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+      </div>
+      <div class="col-md-7 col-sm-0"></div>
+      <div class="col-md-3 col-sm-12 mt-2">
+        <a class="text-secondary">Become a member</a>
+        <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
+      </div>
+    </div>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-sm sticky-top navbar-light justify-content-between" style="background-color:white">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./blog.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./blog-mobile.html">Mobile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./blog-web.html">Web</a>
+          </li>
+      </ul>
+      <div class="form-inline mr-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <a href="./blog-search-kotlin.html"><button class="btn btn-outline-primary my-2 my-sm-0">Search</button></a>
+      </div>
+    </nav>
+
+    <h1 class="text-center mt-4">Latest Blog Posts</h1>
+
+    <div id="main-blog-container" class="container-fluid mt-4">
+      <div class="row">
+        <!-- LEFT SIDE OF MAIN CONTENT -->
+        <div class="col-md-8 col-sm-12">
+          <!-- A typical Blog post-->
+          <a href="#">
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/progressive_web_app.png" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/progressive-web-apps-->
+                <h4>Progressive Web Apps</h4>
+                <p class="blog-item-subtitle">Learn to build amazing PWAs</p>
+                <p class="text-left blog-item-category">Category : Technology Web PWA</p>
+                <p class="text-right blog-item-date">Feb 8 · 9 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- A typical Blog post-->
+          <a href="#">
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/laravel.png" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/progressive-web-apps-->
+                <h4>Build an API with Laravel 5.7</h4>
+                <p class="blog-item-subtitle">We’re hosting the Decemeber 2018 Laravel SF meetup at Stitch Labs. These
+                  are
+                  some show notes about installing Laravel and setting up an API.</p>
+                <p class="text-left blog-item-category">Category : Web Laravel PHP API</p>
+                <p class="text-right blog-item-date">Dec 8 · 7 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- A typical Blog post-->
+          <a href="#">
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/laravel_nova.png" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/progressive-web-apps-->
+                <h4>Introducing Laravel Nova</h4>
+                <p class="blog-item-subtitle">I’m thrilled to announce the newest member of the Laravel ecosystem:
+                  Laravel
+                  Nova</p>
+                <p class="text-left blog-item-category">Category : Web Laravel PHP Laravel-Nova</p>
+                <p class="text-right blog-item-date">Jul 26 · 7 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- A typical Blog post-->
+          <a href="#">
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/material_sound_silence.png" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/google-design/designing-sound-and-silence-1b9674301ec1-->
+                <h4>Designing Sound and Silence</h4>
+                <p class="blog-item-subtitle">Introducing Google`s first-evet public guidelines for designing product...
+                </p>
+                <p class="text-left blog-item-category">Category : Web Design Google Material-Design</p>
+                <p class="text-right blog-item-date">May 8 · 2 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- A typical Blog post-->
+          <a href="#">
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/material_shape.gif" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/google-design/you-need-a-shape-system-8d2aa9016817-->
+                <h4>We need a Shap System</h4>
+                <p class="blog-item-subtitle">How to use shape to enhance your brand, direct attention, and support...
+                </p>
+                <p class="text-left blog-item-category">Category : Web Design Google Material-Design</p>
+                <p class="text-right blog-item-date">Nov 28 · 4 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- A typical Blog post-->
+          <a href="#">
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/es6.png" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/@aravishack/es6-features-a-walk-through-1ffd8eb82f6-->
+                <h4>ES6 features — A walk through
+                </h4>
+                <p class="blog-item-subtitle">We are going to discuss few ES6 features which we can use while coding.
+                </p>
+                <p class="text-left blog-item-category">Category : Web Javasript ES6</p>
+                <p class="text-right blog-item-date">Jun 22 · 6 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- A typical Blog post-->
+          <a href="#">
+
+            <div id="blog-item" class="container row blog-item-container blog-item-content">
+              <div class="blog-item-side-bar" style="width:7px"></div>
+              <div class="col-md-3 col-sm-12 mt-3">
+                <img src="./img/java_11.jpg" style="width: 100%;height: 80%;">
+              </div>
+              <div class="col-md-8 col-sm-12 mt-3">
+                <!-- Link : https://medium.com/swlh/10-things-java-developer-should-learn-in-2019-5e0cf388e07f-->
+                <h4>10 Things Java Developer Should Learn in 2019</h4>
+                <p class="blog-item-subtitle">Want to start the year off right? Here is a range of topics you can tackle
+                  to
+                  make yourself a better Java developer</p>
+                <p class="text-left blog-item-category">Category : Web Java11 Java10</p>
+                <p class="text-right blog-item-date">Jan 2 · 9 min read</p>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <!-- End of a typical blog post -->
+
+          <!-- Pagination -->
+          <nav aria-label="Page navigation example" style="margin-left:40%;">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="./blog.html" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="./blog.html">1</a></li>
+              <li class="page-item active"><a class="page-link" href="./blog-page2.html">2</a></li>
+              <li class="page-item"><a class="page-link" href="./blog-page3.html">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="./blog-page3.html" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Pagination -->
+        </div>
+        <!-- Blank div for spacing-->
+        <div class="col-md-1 col-sm-0"></div>
+        <!-- Right side of main content - TOP STORIES -->
+        <div class="col-md-3 col-sm-12">
+          <div class="sticky-top">
+            <div style="height:70px"></div>
+            <!-- CARD -->
+            <div class="card">
+              <div class="card-header  text-center">
+                <h5>Top stories</h5>
+              </div>
+              <div class="card-body" style="padding: 15px;">
+                <!-- Item 1 -->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-3">01</div>
+                    <div class="col-md-9 col-sm-9" style="padding-right: 0">
+                      <p style="margin:0; padding:0"><a href="./blog-detail-kotlin.html"><b>Coroutines on Android (part
+                            I): Getting the background</b></a></p>
+                      <p style="margin:0; padding:0">Mc Gregor</p>
+                      <p style="margin:0; padding:0" class="blog-item-subtitle">9 min read</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- End item 1 -->
+                <!--Item 2 -->
+                <div class="top-story-item container mt-2">
+                  <div class=" row ">
+                    <div class="col-md-3 col-sm-3">02</div>
+                    <div class="col-md-9 col-sm-9" style="padding-right: 0">
+                      <p style="margin:0; padding:0"><a href="#"><b>React Native Bridging — How to Make Linear Gradient
+                            View</b></a></p>
+                      <p style="margin:0; padding:0">Khoa Pham</p>
+                      <p style="margin:0; padding:0" class="blog-item-subtitle">9 min read</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- End item 2 -->
+                <!--Item 3 -->
+                <div class="top-story-item container mt-2">
+                  <div class=" row ">
+
+                    <div class="col-md-3 col-sm-3">03</div>
+                    <div class="col-md-9 col-sm-9" style="padding-right: 0">
+                      <p style="margin:0; padding:0"><a href="#"><b>Elon Musk`s One Million Robo-Cars</b></a></p>
+                      <p style="margin:0; padding:0">Jane Oliver</p>
+                      <p style="margin:0; padding:0" class="blog-item-subtitle">4 min read</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- End item 3 -->
+                <!--Item 4 -->
+                <div class="top-story-item container mt-2">
+                  <div class=" row ">
+                    <div class="col-md-3 col-sm-3">04</div>
+                    <div class="col-md-9 col-sm-9" style="padding-right: 0">
+                      <p style="margin:0; padding:0"><a href="#"><b>Introducing Laravel Nova</b></a></p>
+                      <p style="margin:0; padding:0">Jake Hollen</p>
+                      <p style="margin:0; padding:0" class="blog-item-subtitle">7 min read</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- End item 4 -->
+              </div>
+            </div>
+            <!-- END CARD -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
