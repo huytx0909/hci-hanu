@@ -8,10 +8,10 @@ Used technology:
 - JavaScript
 
 Contributors:
-- Nguyen The Cong
 - Tran Xuan Huy
-- Nguyen Bao Lam
 - Nguyen Thai Lam
+- Nguyen The Cong
+- Nguyen Bao Lam
 
 Source control system: 
 - Git
