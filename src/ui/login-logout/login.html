@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Login Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#0CF">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="jumbotron" style="margin-top:20%">
+					<h3 class="text-center">Login </h3>
+					<div id="alert-box" class="alert alert-danger mt-3 invisible">
+						<strong>Sorry!</strong> <span id="notice">We cant seem to find this username and password</span>
+					</div>
+					<div class="form">
+						<div class="form-group">
+							<label class="col-form-label">Username : </label>
+							<input id="username" type="email" class="form-control"
+							placeholder="Enter Username">
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Password : </label>
+							<input type="password" class="form-control"
+							placeholder="Enter Password">
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox">
+								Remember me
+							</label>
+						</div>
+						<div class="text-center p-t-57 p-b-20">
+							<span class="txt1">
+								Dont have an account? <a href="./signup.html">Click here</a>
+							</span>
+						</div>
+						<div class="flex-c p-b-112">
+							<a href="#" class="login100-social-item">
+								<i class="fa fa-facebook-f"></i> 
+							</a>
+						</div>
+						<button class="btn btn-primary form-control mt-3" onclick="onSubmit()">Login</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div> 
+</body>
+<script type="text/javascript">
+	var element = document.getElementById("alert-box");
+	function onSubmit() {
+		var username = document.getElementById("username").value
+		if(username != "admin") {
+			element.classList.remove("invisible");
+		} else {
+			// navigate to mainpage
+			storeUser(username);
+			// navigate
+			window.location.href = "../blog/blog.html";
+		}
+	}
+
+	function storeUser(username) {
+		if (typeof(Storage) !== "undefined") {
+		  // Store
+		  localStorage.setItem("username", username);
+		  // Retrieve
+		  console.log(localStorage.getItem("username"));
+		} else {
+			var notice = document.getElementById("notice");
+			notice.innerHTML = "Something went wrong, please refresh the page"
+			element.classList.remove("invisible")
+			console.log("Sorry, your browser does not support Web Storage...");
+		}
+	} 
+
+</script>
+</html>
+

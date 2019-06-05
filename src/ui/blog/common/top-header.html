@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-2 col-sm-12">
+    <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+  </div>
+  <div class="col-md-7 col-sm-0"></div>
+  <div class="col-md-3 col-sm-12 mt-2">
+    <a id="become-a-member" href="../login-logout/signup.html" style="color:black" class="text-secondary">Become a member</a>
+    <a id="login-btn" href="../login-logout/login.html"><button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button></a>
+  </div>
+</div>
+<script>
+  if (typeof localStorage.getItem("username") === 'undefined') {
+    document.getElementById("become-a-member").innerHTML = localStorage.getItem("username");
+    $("#login-btn").remove();
+  } else {
+    // nothing happends
+  }
+</script>>
