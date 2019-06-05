@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Web development with go lang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./blog-detail.css">
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <div style="background-color: white; margin: 2%;" class="card">
+    <div class="row" style="height: 15%">
+      <div class="col-md-2 col-sm-12">
+        <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+      </div>
+      <div class="col-md-7 col-sm-0"></div>
+      <div class="col-md-3 col-sm-12 mt-2">
+        <a class="text-secondary">Become a member</a>
+        <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
+      </div>
+    </div>
+    <!-- NAV BAR -->
+    <nav class="navbar navbar-expand-sm sticky-top navbar-light justify-content-between" style="background-color:white">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="./blog.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./blog-mobile.html">Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./blog-web.html">Web</a>
+        </li>
+      </ul>
+      <div class="form-inline mr-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <a href="./blog-search-kotlin.html"><button class="btn btn-outline-primary my-2 my-sm-0">Search</button></a>
+      </div>
+    </nav>
+    <!-- Below nav, main content-->
+    <div class="container-fluid">
+      <div class="row mt-2">
+        <img src="./img/go-lang.png" style="width:100%; height:250px">
+        <!-- AUTHOR- LEFT-->
+        <div class="col-md-2 col-sm-2 mt-5 text-center">
+          <div class="sticky-top">
+            <div style="height: 70px; width: 70px;"></div>
+            <div class="mt-5">
+              <img src="./img/Picture-of-person.png" alt="Avatar" class="avatar">
+              <h5 class="mt-2">Nguyen Thai Lam</h5>
+              <p class="blog-item-subtitle">HANU Student</p>
+              <div class="mt-5">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <a href="./edit/blog-edit.html"><button class="btn btn-block btn-success">Edit</button></a>
+                  </div>
+                  <div class="col-sm-12 mt-3">
+                    <button class="btn btn-block btn-danger" onclick="onDelete()">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END AUTHOR- LEFT-->
+        <!-- MAIN CONTENT -->
+        <div class="col-md-8 col-sm-10 mt-5 mr-5 ml-5">
+          <h1>Web development with Golang</h1>
+          <br>
+          <p>This is a blog about Golang</p>
+          <!-- CATEGORIES -->
+          <h5> <span>Category : </span>
+            <a href="./blog-category-kotlin.html" class="badge badge-secondary">Kotlin</a>
+            <a href="#" class="badge badge-secondary">Web</a>
+            <a href="#" class="badge badge-secondary">Golang</a>
+          </h5>
+          <!-- END MAIN CONTENT-->
+        </div>
+        <!-- BLANK ON THE RIGHT-->
+        <div class="col-md-2 col-sm-0 mt-5">
+
+        </div>
+        <!-- END BLANK RIGHT-->
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function onDelete() {
+    var result = confirm("Do you sure you want to delete `Web development with Golang?`");
+    if (result) {
+      window.location.href = "./delete/blog-delete-success.html";
+    } else {
+      console.log("Cancel")
+    }
+  }
+</script>
+
+</html>

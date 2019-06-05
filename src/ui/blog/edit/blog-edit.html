@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Edit Blog </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key"></script>
+  <script>
+    tinymce.init({
+      selector: '#blog'
+    });
+  </script>
+</head>
+<!--API : y4x9yqq5x3zhsjbtac8yyly0ad6mrpzyca47yodwpi740kbr-->
+
+<body>
+  <div style="background-color: white; margin: 2%;" class="card">
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-2 col-sm-1 text-center">
+           <a href="#"> &lt; Go Back </a>
+        </div>
+        <div class="col-md-10 col-sm11">
+          <h4 class="text-center">Edit Blog here </h4>
+          <!-- MAIN FORM -->
+          <div class="mt-5 ml-5 mr-5" style="width: 70%;">
+            <div class="form-group row">
+              <label for="title" class="col-sm-2 col-form-label">Title</label>
+              <div class="col-sm-10">
+                <input id="title" type="text" class="form-control-plaintext border border-primary" value="     Web development with Go lang">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="category" class="col-sm-2 col-form-label">Category</label>
+              <div class="col-sm-10">
+                <select id="category" class="form-control">
+                  <option>Web</option>
+                  <option>Android</option>
+                  <option selected>Go lang</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="image" class="col-sm-2 col-form-label">Image</label>
+              <div class="col-sm-10">
+                <input type="file" name="pic" accept="image/*">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="attachFiles" class="col-sm-2 col-form-label">Attach files</label>
+              <div class="col-sm-10">
+                <input type="file" name="attach-file" accept="*">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="blog" class="col-md-2 col-sm-2 col-form-label">Blog</label>
+              <div class="col-sm-10">
+                <textarea class="form-control col-md-12 col-sm-12" id="blog" rows="12" >
+                  This is the content of the blog
+                </textarea>
+              </div>
+            </div>
+
+            <div id="create-blog-buttons-container" class="form-group row">
+              <div class="col-md-3"></div>
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <a href="./blog-edit-success.html"><button class="btn btn-success" style="width: 90%">Upload</button></a>
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-secondary" style="width: 90%" onclick="onCancel()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+function onCancel() {
+  var result = confirm("Are you certain you want to cancel? All works will NOT be saved");
+  if (result) {
+    window.location.href = "../blog.html";
+  } else {
+    console.log("Cancel")
+  }
+}
+</script>
+</html>
