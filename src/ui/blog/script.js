@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log("OK");
   $('#header').load('./common/header.html');
 
   $(function () {
