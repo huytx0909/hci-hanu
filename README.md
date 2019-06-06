@@ -15,3 +15,12 @@ Contributors:
 
 Source control system: 
 - Git
+
+Deadline: Sang chu nhat
+Huy : Role
+TLam: Blog
+BLam: Category
+
+Guys: Add previous button! 
+
+Chieu toi: Check Flow.
