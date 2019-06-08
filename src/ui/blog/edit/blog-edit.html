@@ -27,7 +27,12 @@
     <div class="container-fluid mt-5">
       <div class="row">
         <div class="col-md-2 col-sm-1 text-center">
-           <a href="#"> &lt; Go Back </a>
+          <a href="#" onclick="goBack()"> &lt; Go back </a>
+          <script>
+            function goBack() {
+              window.history.back();
+            }
+          </script>
         </div>
         <div class="col-md-10 col-sm11">
           <h4 class="text-center">Edit Blog here </h4>
@@ -36,7 +41,8 @@
             <div class="form-group row">
               <label for="title" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
-                <input id="title" type="text" class="form-control-plaintext border border-primary" value="     Web development with Go lang">
+                <input id="title" type="text" class="form-control-plaintext border border-primary"
+                  value="     Web development with Go lang">
               </div>
             </div>
 
@@ -68,22 +74,26 @@
             <div class="form-group row">
               <label for="blog" class="col-md-2 col-sm-2 col-form-label">Blog</label>
               <div class="col-sm-10">
-                <textarea class="form-control col-md-12 col-sm-12" id="blog" rows="12" >
+                <textarea class="form-control col-md-12 col-sm-12" id="blog" rows="12">
                   This is the content of the blog
                 </textarea>
               </div>
             </div>
 
             <div id="create-blog-buttons-container" class="form-group row">
-              <div class="col-md-3"></div>
-              <div class="col-md-3"></div>
-              <div class="col-md-3">
-                <a href="./blog-edit-success.html"><button class="btn btn-success" style="width: 90%">Upload</button></a>
+                <div id="" class="col-md-3"></div>
+                <div class="col-md-3">
+                  <a href="./blog-edit-success.html"><button class="btn btn-success"
+                      style="width: 90%">Upload</button></a>
+                </div>
+                <div class="col-md-3">
+                  <a href="../create/blog-create-draft.html"><button class="btn btn-warning" style="width: 90%">Saved as
+                      draft</button></a>
+                </div>
+                <div class="col-md-3">
+                  <button class="btn btn-secondary" style="width: 90%" onclick="onCancel()">Cancel</button>
+                </div>
               </div>
-              <div class="col-md-3">
-                <button class="btn btn-secondary" style="width: 90%" onclick="onCancel()">Cancel</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -92,13 +102,14 @@
 </body>
 
 <script>
-function onCancel() {
-  var result = confirm("Are you certain you want to cancel? All works will NOT be saved");
-  if (result) {
-    window.location.href = "../blog.html";
-  } else {
-    console.log("Cancel")
+  function onCancel() {
+    var result = confirm("Are you certain you want to cancel? All works will NOT be saved");
+    if (result) {
+      window.history.back()
+    } else {
+      console.log("Cancel")
+    }
   }
-}
 </script>
+
 </html>
