@@ -61,7 +61,7 @@
 	var element = document.getElementById("alert-box");
 	function onSubmit() {
 		var username = document.getElementById("username").value
-		if (username != "admin") {
+		if (username != "admin" || username != "Thai Lam") {
 			element.classList.remove("d-none")
 		} else {
 			// navigate to mainpage
