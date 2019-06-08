@@ -44,15 +44,22 @@
             Programming
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">PHP</a>
-            <a class="dropdown-item" href="#">Javascript</a>
-            <a class="dropdown-item" href="./blog-category-kotlin.html">Kotlin</a>
-            <a class="dropdown-item" href="">Java</a>
-            <a class="dropdown-item" href="">C#</a>
-            <a class="dropdown-item" href="">C++</a>
+            <span class="dropdown-item" href="#">PHP</span>
+            <span class="dropdown-item" href="#">Javascript</span>
+            <span class="dropdown-item" href="./blog-category-kotlin.html" onclick="navigateKotlin()">Kotlin</span>
+            <script>
+            function navigateKotlin() {
+              window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog-category-kotlin.html"
+            }
+            </script>
+            <span class="dropdown-item" href="">Java</span>
+            <span class="dropdown-item" href="">C#</span>
+            <span class="dropdown-item" href="">C++</span>
           </div>
         </li>
       </ul>
+
+
       <div class="form-inline mr-5">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <a href="./blog-search-kotlin.html"><button class="btn btn-outline-primary my-2 my-sm-0">Search</button></a>
