@@ -1,13 +1,6 @@
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="./style.css">
 <div class="row">
   <div class="col-md-2 col-sm-12">
-    <img src="../../img/my-olo.png" style="height:30px; margin-top:10px; margin-left:80px">
+    <span><span style="color: cyan">Techkiez</span> Blog</span>
   </div>
   <div class="col-md-7 col-sm-0"></div>
   <div class="col-md-3 col-sm-12 mt-2">
@@ -34,9 +27,20 @@
         My Drafts
       </button>
     </a>
+
+    <a id="draft-blog-post" href="#" class="d-none">
+      <button class="btn btn-secondary my-2 my-sm my-sm-0 ml-3" onclick="logOut()">
+        Log out
+      </button>
+    </a>
   </div>
 </div>
 <script>
+  function logOut() {
+    localStorage.removeItem("username");
+    window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html;"
+  }
+
   if (typeof localStorage.getItem("username") !== 'undefined') {
     $("#login-btn").remove();
     $("#become-a-member").remove();
