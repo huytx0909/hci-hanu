@@ -7,10 +7,10 @@
     <a id="become-a-member" href="../login-logout/signup.html" style="color:black" class="text-secondary">Become a
       member</a>
     <a id="login-btn" href="../login-logout/login.html">
-      <button class="btn btn-primary my-2 my-sm-0 ml-3">Login
-      </button>
+      <button class="btn btn-primary my-2 my-sm-0 ml-3">Login</button>
     </a>
     <a id="profile" href="../blog/profile/index.html" style="color:black" class="text-secondary">Thai Lam</a>
+    
     <a id="new-blog-post" href="../blog/create/blog-create.html" class="d-none">
       <button class="btn btn-primary my-2 my-sm my-sm-0 ml-3">
         Write Blog
@@ -41,11 +41,12 @@
     $("#login-btn").remove();
     $("#become-a-member").remove();
     document.getElementById("profile").classList.remove("d-none");
-    // if (localStorage.getItem("username") == "") {
-    //   document.getElementById("profile").innerHTML = "Thai Lam"
-    // } else {
-    //   document.getElementById("profile").innerHTML = localStorage.getItem("username");
-    // }
+    console.log("username : " + localStorage.getItem("username"))
+    if (localStorage.getItem("username") == "") {
+      document.getElementById("profile").innerHTML = "Thai Lam"
+    } else {
+      document.getElementById("profile").innerHTML = localStorage.getItem("username");
+    }
     document.getElementById("new-blog-post").classList.remove("d-none");
     document.getElementById("draft-blog-post").classList.remove("d-none");
     document.getElementById("logout").classList.remove("d-none");
