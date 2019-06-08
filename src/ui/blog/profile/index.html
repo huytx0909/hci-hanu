@@ -20,12 +20,67 @@
 <body>
   <div style="background-color: white; margin: 2%;" class="card">
     <!-- HEADER -->
-    <div id="top-header" style="height: 15%"></div>
-    <script>
-      $(document).ready(function () {
-        $('#top-header').load('../common/top-header.html');
-      })
-    </script>
+    <div id="top-header" style="height: 15%">
+      <div class="row">
+        <div class="col-md-2 col-sm-12 mt-2">
+          <img src="../img/techkiez.svg" alt="Techkiez" style="margin-left: 15%; height:95%">
+        </div>
+        <div class="col-md-6 col-sm-0"></div>
+        <div class="col-md-4 col-sm-12 mt-3">
+          <a id="become-a-member" href="../../login-logout/signup.html" style="color:black"
+            class="text-secondary">Become a
+            member</a>
+          <a id="login-btn" href="../../login-logout/login.html">
+            <button class="btn btn-primary my-2 my-sm-0 ml-3">Login
+            </button>
+          </a>
+          <a id="profile" href="../profile/index.html" style="color:black" class="text-secondary">Thai Lam</a>
+          <a id="new-blog-post" href="../create/blog-create.html" class="d-none">
+            <button class="btn btn-primary my-2 my-sm my-sm-0 ml-3">
+              Write Blog
+            </button>
+          </a>
+
+          <a id="draft-blog-post" href="../profile/drafts.html" class="d-none">
+            <button class="btn btn-warning my-2 my-sm my-sm-0 ml-3">
+              My Drafts
+            </button>
+          </a>
+
+          <a id="logout" href="#" class="d-none">
+            <button class="btn btn-secondary my-2 my-sm my-sm-0 ml-3" onclick="logOut()">
+              Log out
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <script>
+        function logOut() {
+          localStorage.removeItem("username");
+          window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html"
+        }
+
+        if (typeof localStorage.getItem("username") !== 'undefined') {
+          $("#login-btn").remove();
+          $("#become-a-member").remove();
+          document.getElementById("profile").classList.remove("d-none");
+          // if (localStorage.getItem("username") == "") {
+          //   document.getElementById("profile").innerHTML = "Thai Lam"
+          // } else {
+          //   document.getElementById("profile").innerHTML = localStorage.getItem("username");
+          // }
+          document.getElementById("new-blog-post").classList.remove("d-none");
+          document.getElementById("draft-blog-post").classList.remove("d-none");
+          document.getElementById("logout").classList.remove("d-none");
+          // 
+          console.log("OK");
+        } else {
+          console.log("Not OK");
+          // nothing happends
+        }
+      </script>
+    </div>
     <!-- NAV BAR -->
     <nav class="navbar navbar-expand-sm sticky-top navbar-light justify-content-between" style="background-color:white">
       <!-- Links -->
