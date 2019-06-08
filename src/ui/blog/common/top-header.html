@@ -1,20 +1,16 @@
 <div class="row">
   <div class="col-md-2 col-sm-12">
-    <img src="../img/techkiez.svg" alt="Techkiez">
+    <img src="./img/techkiez.svg" alt="Techkiez">
   </div>
-  <div class="col-md-7 col-sm-0"></div>
-  <div class="col-md-3 col-sm-12 mt-2">
+  <div class="col-md-5 col-sm-0"></div>
+  <div class="col-md-5 col-sm-12 mt-2">
     <a id="become-a-member" href="../login-logout/signup.html" style="color:black" class="text-secondary">Become a
       member</a>
     <a id="login-btn" href="../login-logout/login.html">
       <button class="btn btn-primary my-2 my-sm-0 ml-3">Login
       </button>
     </a>
-    <a id="profile" href="#" class="d-none">
-      <button class="btn btn-primary my-2 my-sm my-sm-0 ml-3">
-        Thai Lam
-      </button>
-    </a>
+    <a id="profile" href="../blog/profile/index.html" style="color:black" class="text-secondary">Thai Lam</a>
     <a id="new-blog-post" href="../blog/create/blog-create.html" class="d-none">
       <button class="btn btn-primary my-2 my-sm my-sm-0 ml-3">
         Write Blog
@@ -38,7 +34,7 @@
 <script>
   function logOut() {
     localStorage.removeItem("username");
-    window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html;"
+    window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html"
   }
 
   if (typeof localStorage.getItem("username") !== 'undefined') {
