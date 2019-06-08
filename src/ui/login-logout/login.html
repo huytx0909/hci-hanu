@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body style="background-color:#0CF">
 	<div class="container">
 		<div class="row">
@@ -19,19 +21,17 @@
 			<div class="col-md-4">
 				<div class="jumbotron" style="margin-top:20%">
 					<h3 class="text-center">Login </h3>
-					<div id="alert-box" class="alert alert-danger mt-3 invisible">
+					<div id="alert-box" class="alert alert-danger mt-3 d-none">
 						<strong>Sorry!</strong> <span id="notice">We cant seem to find this username and password</span>
 					</div>
 					<div class="form">
 						<div class="form-group">
 							<label class="col-form-label">Username : </label>
-							<input id="username" type="email" class="form-control"
-							placeholder="Enter Username">
+							<input id="username" type="email" class="form-control" placeholder="Enter Username">
 						</div>
 						<div class="form-group">
 							<label class="col-form-label">Password : </label>
-							<input type="password" class="form-control"
-							placeholder="Enter Password">
+							<input type="password" class="form-control" placeholder="Enter Password">
 						</div>
 						<div class="checkbox">
 							<label>
@@ -46,7 +46,7 @@
 						</div>
 						<div class="flex-c p-b-112">
 							<a href="#" class="login100-social-item">
-								<i class="fa fa-facebook-f"></i> 
+								<i class="fa fa-facebook-f"></i>
 							</a>
 						</div>
 						<button class="btn btn-primary form-control mt-3" onclick="onSubmit()">Login</button>
@@ -55,14 +55,14 @@
 			</div>
 			<div class="col-md-4"></div>
 		</div>
-	</div> 
+	</div>
 </body>
 <script type="text/javascript">
 	var element = document.getElementById("alert-box");
 	function onSubmit() {
 		var username = document.getElementById("username").value
-		if(username != "admin") {
-			element.classList.remove("invisible");
+		if (username != "admin") {
+			element.classList.remove("d-none")
 		} else {
 			// navigate to mainpage
 			storeUser(username);
@@ -72,19 +72,19 @@
 	}
 
 	function storeUser(username) {
-		if (typeof(Storage) !== "undefined") {
-		  // Store
-		  localStorage.setItem("username", username);
-		  // Retrieve
-		  console.log(localStorage.getItem("username"));
+		if (typeof (Storage) !== "undefined") {
+			// Store
+			localStorage.setItem("username", username);
+			// Retrieve
+			console.log(localStorage.getItem("username"));
 		} else {
 			var notice = document.getElementById("notice");
 			notice.innerHTML = "Something went wrong, please refresh the page"
-			element.classList.remove("invisible")
+			element.classList.remove("d-none")
 			console.log("Sorry, your browser does not support Web Storage...");
 		}
-	} 
+	}
 
 </script>
-</html>
 
+</html>
