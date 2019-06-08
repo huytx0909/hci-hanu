@@ -21,7 +21,7 @@
 			<div class="col-md-4">
 				<div class="jumbotron" style="margin-top:5%">
 					<h3 class="text-center">Signup </h3>
-					<div id="alert-box" class="alert alert-danger mt-3 invisible">
+					<div id="alert-box" class="alert alert-danger mt-3 d-none">
 						<strong>Sorry!</strong>
 						<span id="notice">We cant seem to find this username and password</span>
 					</div>
@@ -91,7 +91,7 @@
 	}
 
 	function showError(isOk) {
-		element.classList.remove("invisible")
+		element.classList.remove("d-none")
 	}
 
 	function storeUser(username) {
