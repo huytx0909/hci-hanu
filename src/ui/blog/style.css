@@ -72,3 +72,7 @@ a:hover {
   border-color: #007bff;   
   border-style: solid;
 }
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
