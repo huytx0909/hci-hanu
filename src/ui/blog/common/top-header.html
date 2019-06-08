@@ -37,15 +37,17 @@
     window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html"
   }
 
-  if (typeof localStorage.getItem("username") !== 'undefined' && localStorage.getItem("username") != null) {
+  var username = localStorage.getItem("username")
+
+  if (typeof username !== 'undefined' && username != null) {
     $("#login-btn").remove();
     $("#become-a-member").remove();
     document.getElementById("profile").classList.remove("d-none");
-    console.log("username : " + localStorage.getItem("username"))
-    if (localStorage.getItem("username") == "") {
-      document.getElementById("profile").innerHTML = "Thai Lam"
-    } else {
+    console.log("username : " + username)
+    if (username == "") {
       document.getElementById("profile").innerHTML = "Error getting username"
+    } else {
+      document.getElementById("profile").innerHTML = username
     }
     document.getElementById("new-blog-post").classList.remove("d-none");
     document.getElementById("draft-blog-post").classList.remove("d-none");
