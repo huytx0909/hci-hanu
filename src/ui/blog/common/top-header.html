@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-md-2 col-sm-12">
-    <img src="./img/techkiez.svg" alt="Techkiez">
+  <div class="col-md-2 col-sm-12">5 col-sm-12 mt-2">
+    <img src="./img/techkiez.svg" alt="Techkiez" style="margin-left: 5%">
   </div>
-  <div class="col-md-5 col-sm-0"></div>
-  <div class="col-md-5 col-sm-12 mt-2">
+  <div class="col-md-6 col-sm-0"></div>
+  <div class="col-md-4 col-sm-12 mt-2">
     <a id="become-a-member" href="../login-logout/signup.html" style="color:black" class="text-secondary">Become a
       member</a>
     <a id="login-btn" href="../login-logout/login.html">
@@ -41,7 +41,12 @@
     $("#login-btn").remove();
     $("#become-a-member").remove();
     document.getElementById("profile").classList.remove("d-none");
-    document.getElementById("profile").innerHTML = localStorage.getItem("username");
+    if (localStorage.getItem("username") == "") {
+      document.getElementById("profile").innerHTML = "Thai Lam"
+    } else {
+      document.getElementById("profile").innerHTML = localStorage.getItem("username");
+    }
+
     document.getElementById("new-blog-post").classList.remove("d-none");
     document.getElementById("draft-blog-post").classList.remove("d-none");
     document.getElementById("logout").classList.remove("d-none");
