@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem("username") == "editor") {
+            window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+        }
+    </script>
     <!-- used for include another html file -->
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
     <!--  -->
@@ -73,8 +78,7 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name for this new role: </label>
-                            <input type="text" class="form-control"
-                                placeholder="Enter role's name">
+                            <input type="text" class="form-control" placeholder="Enter role's name">
                             <small id="emailHelp" class="form-text text-muted">Remember to check for duplicate
                                 roles</small>
                         </div>
