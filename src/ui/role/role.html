@@ -46,24 +46,13 @@
 
     </div>
 
-    <!-- Search form -->
 
-    <div class="active-purple-3 active-purple-4 mt-4 mb-4 has-search">
-        <span class="fa fa-search form-control-feedback"></span>
-        <input onclick="search()" id="search-btn" class="form-control ml-1" type="text" placeholder="Search for Roles"
-            aria-label="Search">
-    </div>
 
     <div class="text-center">
         <h1>ROLE MANAGEMENT</h1>
     </div>
 
     <!-- Side bar is put inside rows for grid division -->
-
-    <div class="text-center">
-        <h2 id="folder-name">
-        </h2>
-    </div>
 
     <!-- Sidebar -->
     <div class="row pt-3 pl-2 ml-1">
@@ -91,6 +80,15 @@
                 <button class="btn btn-success mb-4" onclick='(function(){
                    window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/createRole.html";
                 })()'> Add role </button>
+                
+                <!-- Search form -->
+
+                <div class="active-purple-3 active-purple-4 mt-4 mb-4 has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input onclick="search()" id="search-btn" class="form-control ml-1" type="text"
+                        placeholder="Search for Roles" aria-label="Search">
+                </div>
+
                 <table class="table table-light table-hover">
                     <thead>
                         <tr>
@@ -103,6 +101,7 @@
                             <th>Role</th>
                             <th>Privillege</th>
                             <th>Notes</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -114,8 +113,12 @@
                             <td>Tran</td>
                             <td>huytx09099@gmail.com</td>
                             <td>Admin</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button" onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()'> Edit </button></td>
                             <td>Has all privillege</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -125,8 +128,12 @@
                             <td>Nguyen</td>
                             <td>Lamnguyenthai@gmail.com</td>
                             <td>Editor</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"  onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()' > Edit </button></td>
                             <td>Has following privillege: C/R/U/D personal posts. C/R/U/D public posts</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -136,8 +143,12 @@
                             <td>Vu</td>
                             <td>Vubaolam@fithanu.com</td>
                             <td>Moderator</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"  onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()'> Edit </button></td>
                             <td>Has following privillege: C/R/U/D personal posts. Review flagged posts</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -147,8 +158,12 @@
                             <td>Nguyen</td>
                             <td>congnt@fithanu.com</td>
                             <td>User</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"  onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()'> Edit </button></td>
                             <td>Has following privillege: C/R/U/D personal posts.</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -158,8 +173,12 @@
                             <td>Nguyen</td>
                             <td>hoangnguyen@fithanu.com</td>
                             <td>Guest</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"  onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()'> Edit </button></td>
                             <td>Has following privillege: R posts.</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>6</td>
@@ -169,8 +188,12 @@
                             <td>Nguyen</td>
                             <td>Hieutran@fithanu.com</td>
                             <td>Guest</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"  onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()'> Edit </button></td>
                             <td>Has following privillege: R posts.</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>7</td>
@@ -180,8 +203,10 @@
                             <td>Nguyen</td>
                             <td>Tuannt@fithanu.com</td>
                             <td>Guest</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"> Edit </button></td>
                             <td>Has following privillege: R posts.</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>8</td>
@@ -191,8 +216,12 @@
                             <td>Nguyen</td>
                             <td>congnt@fithanu.com</td>
                             <td>Guest</td>
-                            <td><button class="btn btn-warning" type="button"> Edit privillege </button></td>
+                            <td><button class="btn btn-warning" type="button"  onclick='(function(){
+                                window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
+                             })()'> Edit </button></td>
                             <td>Has following privillege: R posts.</td>
+                            <td><button class="btn btn-danger" onclick="folderDelete()" type="button"> Delete </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

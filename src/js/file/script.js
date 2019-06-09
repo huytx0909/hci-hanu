@@ -4,7 +4,7 @@ const sleep = (milliseconds) => {
 
 function folderClicked(folderName) {
     localStorage.setItem("folderName", folderName);
-    window.location.href = "http://127.0.0.1:81/hci-hanu/src/ui/file/nested-file.html#";
+    window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/file/nested-file.html#";
 }
 
 function getFolderName() {
