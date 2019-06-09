@@ -10,7 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Lmfao</title>
+    <title>Create User</title>
+    <link rel="stylesheet" href="../file/css/style.css">
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -28,45 +29,46 @@
 <body>
 
 <div class="container">
-<div class="panel panel-default" style="background-color: #ea9999; padding: 50px; margin: 30px;">
+<div class="panel panel-default" style="background-color: #FFFFFF; padding: 50px; margin: 30px;">
 <div class="panel-body">
-<h2 style="text-align: center; font-style: normal; color: white;">Create User</h2>
-<a class="back" href="user.html" style="color: white;"> < back </a>
+<h1 style="text-align: center; font-style: normal; color: black;">Create User</h1>
+
+<a href="#" class="previous ml-5 mt-3" onclick="history.back(-1)">&laquo; Previous</a>
 
 <form id="createUser" style="margin: 30px;">
   <div class="form-group">
-    <label for="exampleInputEmail1" style="color: white;">Email</label>
+    <label for="exampleInputEmail1" style="color: black;">Email</label>
     <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required="">
   </div>
 
   <div class="form-group">
-    <label for="exampleInputPassword1" style="color: white;">Password</label>
+    <label for="exampleInputPassword1" style="color: black;">Password</label>
     <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
   </div>
 
   <div class="form-group">
-    <label for="exampleInputPassword1" style="color: white;">Re-Password</label>
+    <label for="exampleInputPassword1" style="color: black;">Re-Password</label>
     <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Re-Password">
     <span id='message'></span>
   </div>
 
   <div class="form-group">
-    <label for="exampleInputRole1" style="color: white;">Role</label>
+    <label for="exampleInputRole1" style="color: black;">Role</label>
     <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="User" checked>
-  <label class="form-check-label" for="exampleRadios1" style="color: white;">
+  <label class="form-check-label" for="exampleRadios1" style="color: black;">
     User
   </label>
 </div>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="Admin">
-  <label class="form-check-label" for="exampleRadios2" style="color: white;">
+  <label class="form-check-label" for="exampleRadios2" style="color: black;">
     Admin
   </label>
 </div>
 <div class="form-check">
   <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="Editor">
-  <label class="form-check-label" for="exampleRadios2"style="color: white;">
+  <label class="form-check-label" for="exampleRadios2"style="color: black;">
     Editor
   </label>
 </div>
