@@ -76,3 +76,8 @@ a:hover {
 .dropdown:hover>.dropdown-menu {
   display: block;
 }
+
+.dropdown-item:hover {
+  cursor: pointer;
+  color:#007bff;
+}
