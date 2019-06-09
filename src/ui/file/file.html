@@ -29,14 +29,14 @@
     <!-- favicons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-   
+
     <!-- included html -->
     <div w3-include-html="https://huytx0909.github.io/hci-hanu/src/common/header.html"></div>
 
     <!-- bootbox.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
 
-    <a href="#" class="previous ml-5 mt-3 "  onclick="history.back(-1)">&laquo; Previous</a>
+    <a href="#" class="previous ml-5 mt-3 " onclick="history.back(-1)">&laquo; Previous</a>
 
     <div class="text-center alert alert-danger alert-dismissible fade show" id="alert-confirm"
         style="visibility: hidden" role="alert">
@@ -51,11 +51,12 @@
         <h1>ROLE MANAGEMENT</h1>
     </div>
 
-     <!-- Search form -->
+    <!-- Search form -->
 
-     <div class="active-purple-3 active-purple-4 mt-4 mb-4 has-search">
+    <div class="active-purple-3 active-purple-4 mt-4 mb-4 has-search">
         <span class="fa fa-search form-control-feedback"></span>
-        <input onclick="search()" id="search-btn" class="form-control ml-1" type="text" placeholder="Search for Files and Folders" aria-label="Search">
+        <input onclick="search()" id="search-btn" class="form-control ml-1" type="text"
+            placeholder="Search for Files and Folders" aria-label="Search">
     </div>
 
     <!-- Side bar is put inside rows for grid division -->
@@ -168,14 +169,16 @@
         </div>
     </div>
     <script src="../../js/file/script.js"></script>
+    
+    
     <script>
         w3IncludeHTML();
 
         $(document).ready(function () {
-    $(".navbar-nav li").removeClass("active");//this will remove the active class from  
-                                       //previously active menu item 
-    $('#file').addClass('active');
-  });
+            $(".navbar-nav li").removeClass("active");//this will remove the active class from  
+            //previously active menu item 
+            $('#file').addClass('active');
+        });
     </script>
     <!-- end -->
 
