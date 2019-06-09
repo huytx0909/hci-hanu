@@ -24,6 +24,12 @@
 
 
 <body>
+  <script>
+    var userName = localStorage.getItem("username");
+    if (userName != "admin" || userName != "editor") {
+      window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+    }
+  </script>
   <!-- used for include another html file -->
   <script src="https://www.w3schools.com/lib/w3data.js"></script>
 
@@ -89,7 +95,8 @@
 
             <tr>
               <td>2</td>
-              <td><a href="https://huytx0909.github.io/hci-hanu/src/ui/blog/blog-detail-kotlin.html">Coroutines on Android (part I): Getting the background</a></td>
+              <td><a href="https://huytx0909.github.io/hci-hanu/src/ui/blog/blog-detail-kotlin.html">Coroutines on
+                  Android (part I): Getting the background</a></td>
               <td>Thomas Bronze</td>
               <td>What problems do coroutines solve?</td>
               <td>01/5/2019</td>
@@ -196,10 +203,10 @@
     w3IncludeHTML();
 
     $(document).ready(function () {
-    $(".navbar-nav li").removeClass("active");//this will remove the active class from  
-                                       //previously active menu item 
-    $('#blog').addClass('active');
-  });
+      $(".navbar-nav li").removeClass("active");//this will remove the active class from  
+      //previously active menu item 
+      $('#blog').addClass('active');
+    });
   </script>
 </body>
 
