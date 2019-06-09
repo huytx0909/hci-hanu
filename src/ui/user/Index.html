@@ -27,7 +27,11 @@
 </head>
 
 <body>
-
+  <script>
+    if (localStorage.getItem("username") == "editor") {
+      window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+    }
+  </script>
   <div class="container">
     <div class="panel panel-default" style="background-color: #ea9999; padding: 50px; margin: 30px;">
       <div class="panel-body">

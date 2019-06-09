@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -7,179 +5,185 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Create User</title>
-    <link rel="stylesheet" href="../file/css/style.css">
+  <title>Create User</title>
+  <link rel="stylesheet" href="../file/css/style.css">
 
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">    <!-- Font Awsome-->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- Font Awsome-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
+
 
 </head>
 
 <body>
+  <script>
+    if (localStorage.getItem("username") == "editor") {
+      window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+    }
+  </script>
+  <div class="container">
+    <div class="panel panel-default" style="background-color: #FFFFFF; padding: 50px; margin: 30px;">
+      <div class="panel-body">
+        <h1 style="text-align: center; font-style: normal; color: black;">Create User</h1>
 
-<div class="container">
-<div class="panel panel-default" style="background-color: #FFFFFF; padding: 50px; margin: 30px;">
-<div class="panel-body">
-<h1 style="text-align: center; font-style: normal; color: black;">Create User</h1>
+        <a href="#" class="previous ml-5 mt-3" onclick="history.back(-1)">&laquo; Previous</a>
 
-<a href="#" class="previous ml-5 mt-3" onclick="history.back(-1)">&laquo; Previous</a>
+        <form id="createUser" style="margin: 30px;">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="color: black;">Email</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"
+              required="">
+          </div>
 
-<form id="createUser" style="margin: 30px;">
-  <div class="form-group">
-    <label for="exampleInputEmail1" style="color: black;">Email</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required="">
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="color: black;">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="color: black;">Re-Password</label>
+            <input type="password" class="form-control" name="confirm_password" id="confirm_password"
+              placeholder="Re-Password">
+            <span id='message'></span>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputRole1" style="color: black;">Role</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="User" checked>
+              <label class="form-check-label" for="exampleRadios1" style="color: black;">
+                User
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="Admin">
+              <label class="form-check-label" for="exampleRadios2" style="color: black;">
+                Admin
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="Editor">
+              <label class="form-check-label" for="exampleRadios2" style="color: black;">
+                Editor
+              </label>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="col-md-12 text-center">
+          <button type="submit" id="submit" class="btn btn-danger">Submit</button>
+        </div>
+
+        <div class="alert alert-danger" id="error" style="margin: 50px;">
+          <strong>Error!</strong> invalid input.
+        </div>
+
+        <div class="alert alert-success" id="success" style="margin: 50px;">
+          <strong>Success!</strong> Create user successfully.
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="exampleInputPassword1" style="color: black;">Password</label>
-    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleInputPassword1" style="color: black;">Re-Password</label>
-    <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Re-Password">
-    <span id='message'></span>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleInputRole1" style="color: black;">Role</label>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="User" checked>
-  <label class="form-check-label" for="exampleRadios1" style="color: black;">
-    User
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="Admin">
-  <label class="form-check-label" for="exampleRadios2" style="color: black;">
-    Admin
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="role" value="Editor">
-  <label class="form-check-label" for="exampleRadios2"style="color: black;">
-    Editor
-  </label>
-</div>
-</div>
-  
-</form>
-  
-  <div class="col-md-12 text-center"> 
-  <button type="submit" id="submit" class="btn btn-danger">Submit</button>
-</div>
-
-<div class="alert alert-danger" id="error" style="margin: 50px;">
-  <strong>Error!</strong> invalid input.
-</div> 
-
-<div class="alert alert-success" id="success"  style="margin: 50px;">
-  <strong>Success!</strong> Create user successfully.
-</div>  
-
-</div>        
-
-</div>
-</div>
 
 
 
-
-<script>
+  <script>
     $('#password, #confirm_password').on('keyup', function () {
-  if ($('#password').val() == $('#confirm_password').val()) {
-    $('#message').html('Matching').css('color', 'green');
-  } else 
-    $('#message').html('Not Matching').css('color', 'red');
-});
-</script>
+      if ($('#password').val() == $('#confirm_password').val()) {
+        $('#message').html('Matching').css('color', 'green');
+      } else
+        $('#message').html('Not Matching').css('color', 'red');
+    });
+  </script>
 
-<script>
-       document.getElementById('error').style.display = "none";
-       document.getElementById('success').style.display = "none";
-
-      
-       localStorage.removeItem('email');
-    localStorage.removeItem('password');
-    localStorage.removeItem('confirm_password');
-    localStorage.removeItem('role');
+  <script>
+    document.getElementById('error').style.display = "none";
+    document.getElementById('success').style.display = "none";
 
 
-
-  function validateForm() {
-  var x = document.forms["createUser"]["email"].value;
-  if (x == "") {
-    alert("you need to input your email");
-    return false;
-  }
-  return true;
-}
-
-function validateForm1() {
-  var x = document.forms["createUser"]["password"].value;
-  if (x == "") {
-        alert("you need to input your password");
-    return false;
-  }
-  return true;
-}
-
-function validateForm2() {
-  var x = document.forms["createUser"]["confirm_password"].value;
-  if (x == "") {
-        alert("you need to input your confirm_password");
-
-    return false;
-  }
-  return true;
-}
-
-document.getElementById("submit").onclick = function (){
-    if($('#password').val() == $('#confirm_password').val() && validateForm() == true && validateForm1() == true && validateForm2() == true ) {
-       document.getElementById('success').style.display = "block";
-       history.back(-1);
-
-
-if (typeof(Storage) !== 'undefined') {
     localStorage.removeItem('email');
     localStorage.removeItem('password');
     localStorage.removeItem('confirm_password');
     localStorage.removeItem('role');
 
 
-    localStorage.setItem('email', document.forms["createUser"]["email"].value );
-    localStorage.setItem('password', document.forms["createUser"]["password"].value);
-    localStorage.setItem('confirm_password', document.forms["createUser"]["confirm_password"].value);
-    localStorage.setItem('role', document.forms["createUser"]["role"].value); 
-} else {
-    alert('No localStorage');
-}
+
+    function validateForm() {
+      var x = document.forms["createUser"]["email"].value;
+      if (x == "") {
+        alert("you need to input your email");
+        return false;
+      }
+      return true;
+    }
+
+    function validateForm1() {
+      var x = document.forms["createUser"]["password"].value;
+      if (x == "") {
+        alert("you need to input your password");
+        return false;
+      }
+      return true;
+    }
+
+    function validateForm2() {
+      var x = document.forms["createUser"]["confirm_password"].value;
+      if (x == "") {
+        alert("you need to input your confirm_password");
+
+        return false;
+      }
+      return true;
+    }
+
+    document.getElementById("submit").onclick = function () {
+      if ($('#password').val() == $('#confirm_password').val() && validateForm() == true && validateForm1() == true && validateForm2() == true) {
+        document.getElementById('success').style.display = "block";
+        history.back(-1);
+
+
+        if (typeof (Storage) !== 'undefined') {
+          localStorage.removeItem('email');
+          localStorage.removeItem('password');
+          localStorage.removeItem('confirm_password');
+          localStorage.removeItem('role');
+
+
+          localStorage.setItem('email', document.forms["createUser"]["email"].value);
+          localStorage.setItem('password', document.forms["createUser"]["password"].value);
+          localStorage.setItem('confirm_password', document.forms["createUser"]["confirm_password"].value);
+          localStorage.setItem('role', document.forms["createUser"]["role"].value);
+        } else {
+          alert('No localStorage');
+        }
 
 
 
 
-       } else {
-       document.getElementById('error').style.display = "block";
-       }
-};
-</script>
+      } else {
+        document.getElementById('error').style.display = "block";
+      }
+    };
+  </script>
 
 </body>
 
 </html>
-
-
-
-
-

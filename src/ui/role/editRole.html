@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <script>
+        if (localStorage.getItem("username") == "editor") {
+            window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+        }
+    </script>
     <!-- used for include another html file -->
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
     <!--  -->
@@ -69,8 +74,7 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name for this new role: </label>
-                            <input type="text" class="form-control"
-                                placeholder="Editor">
+                            <input type="text" class="form-control" placeholder="Editor">
                             <small id="emailHelp" class="form-text text-muted">Remember to check for duplicate
                                 roles</small>
                         </div>
@@ -98,39 +102,48 @@
 
                             <tbody>
                                 <tr>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Create</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         Create</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Create</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Create</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         Create</td>
                                 </tr>
 
                                 <tr>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         View all</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         View all</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         View all</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         View all</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         View all</td>
                                 </tr>
 
                                 <tr>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Update</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Update</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         Update</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Update</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         Update</td>
@@ -139,13 +152,16 @@
                                 <tr>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         Delete</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Delete</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Delete</td>
                                     <td><input type="checkbox" class="text-center form-control-lg" id="customCheck1">
                                         Delete</td>
-                                    <td><input checked type="checkbox" class="text-center form-control-lg" id="customCheck1">
+                                    <td><input checked type="checkbox" class="text-center form-control-lg"
+                                            id="customCheck1">
                                         Delete</td>
                                 </tr>
                             </tbody>
