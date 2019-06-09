@@ -30,7 +30,8 @@
 
 <body>
   <script>
-    if (localStorage.getItem("username") == "editor") {
+    var userName = localStorage.getItem("username");
+    if (userName != "admin") {
       window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
     }
   </script>
