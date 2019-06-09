@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Create your Blog </title>
+  <title>Edit Blog </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -22,27 +22,22 @@
 </head>
 <!--API : y4x9yqq5x3zhsjbtac8yyly0ad6mrpzyca47yodwpi740kbr-->
 
-<body>
+<body style="background-color: gray">
   <div style="background-color: white; margin: 2%;" class="card">
     <div class="container-fluid mt-5">
       <div class="row">
         <div class="col-md-2 col-sm-1 text-center">
-          <a href="#" onclick="goBack()"> &lt; Go back </a>
-          <script>
-            function goBack() {
-              window.history.back();
-            }
-          </script>
+          <a href="#" onclick="goBackHistory()"> &lt; Go Back </a>
         </div>
         <div class="col-md-10 col-sm11">
-          <h4 class="text-center">Create your new blog post</h4>
+          <h4 class="text-center">Edit Blog Id : 1</h4>
           <!-- MAIN FORM -->
           <div class="mt-5 ml-5 mr-5" style="width: 70%;">
             <div class="form-group row">
               <label for="title" class="col-sm-2 col-form-label">Title</label>
               <div class="col-sm-10">
                 <input id="title" type="text" class="form-control-plaintext border border-primary"
-                  placeholder="     Title of the blog...">
+                  value="Google Wants the Chromebook to Be the Future of Computing">
               </div>
             </div>
 
@@ -50,8 +45,9 @@
               <label for="category" class="col-sm-2 col-form-label">Category</label>
               <div class="col-sm-10">
                 <select id="category" class="form-control">
-                  <option selected>Web</option>
+                  <option>Web</option>
                   <option>Android</option>
+                  <option selected>Google</option>
                 </select>
               </div>
             </div>
@@ -73,18 +69,19 @@
             <div class="form-group row">
               <label for="blog" class="col-md-2 col-sm-2 col-form-label">Blog</label>
               <div class="col-sm-10">
-                <textarea class="form-control col-md-12 col-sm-12" id="blog" rows="8"></textarea>
+                <textarea class="form-control col-md-12 col-sm-12" id="blog"
+                  rows="8">Because people want solutions and services and do not some thing inconvenient</textarea>
               </div>
             </div>
 
             <div id="create-blog-buttons-container" class="form-group row">
               <div id="" class="col-md-3"></div>
               <div class="col-md-3">
-                <a href="./blog-create-success.html"><button class="btn btn-success"
+                <a href="./blog-edit-success.html"><button class="btn btn-success"
                     style="width: 90%">Upload</button></a>
               </div>
               <div class="col-md-3">
-                <a href="./blog-create-draft.html"><button class="btn btn-warning" style="width: 90%">Saved as
+                <a href="./blog-edit-draft.html"><button class="btn btn-warning" style="width: 90%">Saved as
                     draft</button></a>
               </div>
               <div class="col-md-3">
@@ -99,10 +96,13 @@
 </body>
 
 <script>
+  function goBackHistory() {
+    window.history.back();
+  }
   function onCancel() {
     var result = confirm("Are you certain you want to cancel? All works will NOT be saved");
     if (result) {
-      window.location.href = "../blog.html";
+      goBackHistory()
     } else {
       console.log("Cancel")
     }

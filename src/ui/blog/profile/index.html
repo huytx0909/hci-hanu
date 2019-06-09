@@ -20,81 +20,47 @@
 <body>
   <div style="background-color: white; margin: 2%;" class="card">
     <!-- HEADER -->
-    <div id="top-header" style="height: 15%">
-      <div class="row">
-        <div class="col-md-2 col-sm-12 mt-2">
-          <img src="../img/techkiez.svg" alt="Techkiez" style="margin-left: 15%; height:95%">
-        </div>
-        <div class="col-md-6 col-sm-0"></div>
-        <div class="col-md-4 col-sm-12 mt-3">
-          <a id="become-a-member" href="../../login-logout/signup.html" style="color:black"
-            class="text-secondary">Become a
-            member</a>
-          <a id="login-btn" href="../../login-logout/login.html">
-            <button class="btn btn-primary my-2 my-sm-0 ml-3">Login
-            </button>
-          </a>
-          <a id="profile" href="../profile/index.html" style="color:black" class="text-secondary">Thai Lam</a>
-          <a id="new-blog-post" href="../create/blog-create.html" class="d-none">
-            <button class="btn btn-primary my-2 my-sm my-sm-0 ml-3">
-              Write Blog
-            </button>
-          </a>
-
-          <a id="draft-blog-post" href="../profile/drafts.html" class="d-none">
-            <button class="btn btn-warning my-2 my-sm my-sm-0 ml-3">
-              My Drafts
-            </button>
-          </a>
-
-          <a id="logout" href="#" class="d-none">
-            <button class="btn btn-secondary my-2 my-sm my-sm-0 ml-3" onclick="logOut()">
-              Log out
-            </button>
-          </a>
-        </div>
-      </div>
-
-      <script>
-        function logOut() {
-          localStorage.removeItem("username");
-          window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html"
-        }
-
-        if (typeof localStorage.getItem("username") !== 'undefined') {
-          $("#login-btn").remove();
-          $("#become-a-member").remove();
-          document.getElementById("profile").classList.remove("d-none");
-          // if (localStorage.getItem("username") == "") {
-          //   document.getElementById("profile").innerHTML = "Thai Lam"
-          // } else {
-          //   document.getElementById("profile").innerHTML = localStorage.getItem("username");
-          // }
-          document.getElementById("new-blog-post").classList.remove("d-none");
-          document.getElementById("draft-blog-post").classList.remove("d-none");
-          document.getElementById("logout").classList.remove("d-none");
-          // 
-          console.log("OK");
-        } else {
-          console.log("Not OK");
-          // nothing happends
-        }
-      </script>
-    </div>
+    <div id="top-header" style="height: 15%"></div>
+    <script>
+      $(document).ready(function () {
+        $('#top-header').load('./common/top-header.html');
+      })
+    </script>
     <!-- NAV BAR -->
     <nav class="navbar navbar-expand-sm sticky-top navbar-light justify-content-between" style="background-color:white">
       <!-- Links -->
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../blog.html">Home<span class="sr-only">(current)</span></a>
+        <li class="nav-item active">
+          <a class="nav-link" href="./blog.html">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../blog-mobile.html">Mobile</a>
+          <a class="nav-link" href="./blog-mobile.html">Mobile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../blog-web.html">Web</a>
+          <a class="nav-link" href="./blog-web.html">Web</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Programming
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <span class="dropdown-item" href="#">PHP</span>
+            <span class="dropdown-item" href="#">Javascript</span>
+            <span class="dropdown-item" href="./blog-category-kotlin.html" onclick="navigateKotlin()">Kotlin</span>
+            <script>
+              function navigateKotlin() {
+                window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog-category-kotlin.html"
+              }
+            </script>
+            <span class="dropdown-item" href="">Java</span>
+            <span class="dropdown-item" href="">C#</span>
+            <span class="dropdown-item" href="">C++</span>
+          </div>
         </li>
       </ul>
+
+
       <div class="form-inline mr-5">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <a href="./blog-search-kotlin.html"><button class="btn btn-outline-primary my-2 my-sm-0">Search</button></a>
