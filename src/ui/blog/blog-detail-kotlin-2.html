@@ -40,6 +40,25 @@
         <li class="nav-item">
           <a class="nav-link" href="./blog-web.html">Web</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Programming
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <span class="dropdown-item" href="#">PHP</span>
+            <span class="dropdown-item" href="#">Javascript</span>
+            <span class="dropdown-item" href="./blog-category-kotlin.html" onclick="navigateKotlin()">Kotlin</span>
+            <script>
+              function navigateKotlin() {
+                window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog-category-kotlin.html"
+              }
+            </script>
+            <span class="dropdown-item" href="">Java</span>
+            <span class="dropdown-item" href="">C#</span>
+            <span class="dropdown-item" href="">C++</span>
+          </div>
+        </li>
       </ul>
       <div class="form-inline mr-5">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -210,6 +229,7 @@
               </div>
             </div>
           </a>
+          <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
           <!-- CATEGORIES -->
           <h5> <span>Category : </span>
             <span class="badge badge-primary">Technology</span>
@@ -240,6 +260,21 @@
       liked = true;
     }
   }
+</script>
+<script>
+  // ===== Scroll to Top ==== 
+  $(window).scroll(function () {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+      $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+      $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+  });
+  $('#return-to-top').click(function () {      // When arrow is clicked
+    $('body,html').animate({
+      scrollTop: 0                       // Scroll to top of body
+    }, 500);
+  });
 </script>
 
 </html>

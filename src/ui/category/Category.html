@@ -27,13 +27,9 @@
 
 
 <body style="background-color: white;">
-
-
+    <script src="../blog/auth.js"></script>
     <!-- used for include another html file -->
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
-    <!--  -->
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
@@ -46,6 +42,7 @@
 
     <!-- bootbox.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
+    <a href="#" class="previous ml-5 mt-3 " onclick="history.back(-1)">&laquo; Previous</a>
 
 
 
@@ -91,11 +88,11 @@
 
                             <td>
                                 <a href="editCategory.html">
-                                    <img src="open-iconic/svg/pencil.svg" alt="pencil" width="30" height="30" />
+                                    <button class="btn btn-warning">Edit</button>
                                 </a>
                             </td>
                             <td><a href="#" onclick="categoryDelete()">
-                                    <img src="open-iconic/svg/delete.svg" alt="pencil" width="30" height="30" />
+                                    <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>
                         </tr>
@@ -110,21 +107,16 @@
 
                             <td>
                                 <a href="editCategory.html">
-                                    <img src="open-iconic/svg/pencil.svg" alt="pencil" width="30" height="30" />
+                                    <button class="btn btn-warning">Edit</button>
                                 </a>
                             </td>
                             <td><a href="#" onclick="categoryDelete()">
-                                    <img src="open-iconic/svg/delete.svg" alt="pencil" width="30" height="30" />
+                                    <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>
                         </tr>
-
-
-
                     </tbody>
                 </table>
-
-
             </div>
         </div>
     </div>
@@ -138,9 +130,6 @@
                 });
             });
         });
-
-
-
 
         function categoryDelete() {
             homeClick();

@@ -14,7 +14,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<body style="background-color:#0CF">
+<body style="background-color:#007bff">
 	<script>localStorage.removeItem("username");</script>
 	<div class="container">
 		<div class="row">
@@ -62,16 +62,16 @@
 	var element = document.getElementById("alert-box");
 	function onSubmit() {
 		var username = document.getElementById("username").value
-		if (username == "admin" || username == "Thai Lam") {
+		if (username == "admin" || username == "Thai Lam" || username == "editor") {
 			// navigate to mainpage
 			storeUser(username);
 			// navigate
 			if (username == "admin") {
 				window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/admin/index.html";
 			} else if (username == "editor") {
-				window.location.href = "../editor/index.html"
-			} else {
-				window.location.href = "../blog/blog.html";
+				window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/index.html"
+			} else if (username == "Thai Lam"){
+				window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html";
 			}
 		} else {
 			element.classList.remove("d-none")

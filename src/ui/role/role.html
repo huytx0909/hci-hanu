@@ -13,9 +13,14 @@
 </head>
 
 <body>
+    <script>
+        var userName = localStorage.getItem("username");
+        if (userName != "admin") {
+            window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+        }
+    </script>
     <!-- used for include another html file -->
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
-    <!--  -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -31,36 +36,47 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- included html -->
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
-    
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" id="category" href="https://huytx0909.github.io/hci-hanu/src/ui/category/Category.html">Category</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="blog" href="https://huytx0909.github.io/hci-hanu/src/ui/blog/admin/index.html">Blog posts</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" id="role" href="https://huytx0909.github.io/hci-hanu/src/ui/role/role.html">Role Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="user" href="https://huytx0909.github.io/hci-hanu/src/ui/user/user.html">User Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="file" href="https://huytx0909.github.io/hci-hanu/src/ui/file/file.html">File and Folder Management</a>
-                    </li>
-                </ul>
-            </div>
-            <ul class="navbar-nav ml-auto mr-4">
-                <li>
-                    <a class="nav-item" id="logout-btn" href="https://huytx0909.github.io/hci-hanu/src/ui/login-logout/login.html"> Logout </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="file" href="https://huytx0909.github.io/hci-hanu/src/ui/blog/blog.html">
+                        Front-end
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="category"
+                        href="https://huytx0909.github.io/hci-hanu/src/ui/category/Category.html">Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="blog"
+                        href="https://huytx0909.github.io/hci-hanu/src/ui/blog/admin/index.html">Blog posts</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" id="role" href="https://huytx0909.github.io/hci-hanu/src/ui/role/role.html">Role
+                        Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="user" href="https://huytx0909.github.io/hci-hanu/src/ui/user/user.html">User
+                        Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="file" href="https://huytx0909.github.io/hci-hanu/src/ui/file/file.html">File
+                        and Folder Management</a>
                 </li>
             </ul>
-        </nav>
+        </div>
+        <ul class="navbar-nav ml-auto mr-4">
+            <li>
+                <a class="nav-item" id="logout-btn"
+                    href="https://huytx0909.github.io/hci-hanu/src/ui/login-logout/login.html"> Logout </a>
+            </li>
+        </ul>
+    </nav>
 
     <!-- bootbox.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
@@ -246,6 +262,7 @@
                             <td>Nguyen</td>
                             <td>congnt@fithanu.com</td>
                             <td>Guest</td>
+
                             <td><button class="btn btn-warning" type="button" onclick='(function(){
                                 window.location = "https://huytx0909.github.io/hci-hanu/src/ui/role/editRole.html";
                              })()'> Edit </button></td>
@@ -262,7 +279,7 @@
 
     <script src="../../js/file/script.js"></script>
 
-    
+
     <!-- end -->
 
 </body>

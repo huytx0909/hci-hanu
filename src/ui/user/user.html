@@ -27,6 +27,12 @@
 
 
 <body>
+    <script>
+        var userName = localStorage.getItem("username");
+        if (userName != "admin") {
+            window.location.href = "https://huytx0909.github.io/hci-hanu/src/ui/editor/error.html"
+        }
+    </script>
     <!-- used for include another html file -->
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -41,6 +47,7 @@
     <!-- bootbox.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.js"></script>
 
+    <a href="#" class="previous ml-5 mt-3 " onclick="history.back(-1)">&laquo; Previous</a>
 
     <div class="text-center alert alert-danger alert-dismissible fade show" id="alert-confirm" style="visibility:hidden"
         role="alert">
@@ -72,25 +79,23 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <tr>
-                            <td>1</td>
-                            <td>Hai@gmail.com</td>
+                            <td>3</td>
+                            <td>MrCong@hanu.edu.vn</td>
                             <td>user</td>
-                            <td>12/1/2019</td>
-                            <td>14/3/2019</td>
-
+                            <td>10/6/2019</td>
+                            <td>10/6/2019</td>
                             <td>
                                 <a href="editUser.html">
-                                    <img src="open-iconic/svg/pencil.svg" alt="pencil" width="30" height="30" />
+                                    <button class="btn btn-warning">Edit</button>
                                 </a>
                             </td>
-                            <td><a href="#" onclick="userDelete()">
-                                    <img src="open-iconic/svg/delete.svg" alt="pencil" width="30" height="30" />
+                            <td>
+                                <a href="#" onclick="userDelete()">
+                                    <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>
                         </tr>
-
                         <tr>
                             <td>2</td>
                             <td>
@@ -101,17 +106,37 @@
                             </td>
                             <td>10/6/2019</td>
                             <td>10/6/2019</td>
-
                             <td>
                                 <a href="editUser.html">
-                                    <img src="open-iconic/svg/pencil.svg" alt="pencil" width="30" height="30" />
+                                    <button class="btn btn-warning">Edit</button>
                                 </a>
                             </td>
-                            <td><a href="#" onclick="userDelete()">
-                                    <img src="open-iconic/svg/delete.svg" alt="pencil" width="30" height="30" />
+                            <td>
+                                <a href="#" onclick="userDelete()">
+                                    <button class="btn btn-danger">Delete</button>
                                 </a>
                             </td>
                         </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Hai@gmail.com</td>
+                            <td>user</td>
+                            <td>12/1/2019</td>
+                            <td>14/3/2019</td>
+
+                            <td>
+                                <a href="editUser.html">
+                                    <button class="btn btn-warning">Edit</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" onclick="userDelete()">
+                                    <button class="btn btn-danger">Delete</button>
+                                </a>
+                            </td>
+                        </tr>
+
+
                     </tbody>
                 </table>
             </div>
